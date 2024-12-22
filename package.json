@@ -1,0 +1,15 @@
+{
+  "name": "nomandcraft-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:backend": "cd backend && npm run lint",
+    "lint:frontend": "cd frontend && npm run lint",
+    "lint:all": "npm run lint:backend && npm run lint:frontend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
