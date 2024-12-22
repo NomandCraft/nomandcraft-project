@@ -9,23 +9,28 @@ on:
 jobs:
   build_and_test:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Checkout code
+      - name: Check out code
         uses: actions/checkout@v3
 
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-        
           node-version: '22.x'
           cache: 'npm'
+          # route to lock-fike
+          cache-dependency-path: 'backend/package-lock.json'
 
       - name: Install dependencies
+        #  npm install on /backend
         run: npm install
+        working-directory: ./backend
 
       - name: Lint code
         run: npm run lint
+        working-directory: ./backend
 
       - name: Run tests
         run: npm test
+        working-directory: ./backend
