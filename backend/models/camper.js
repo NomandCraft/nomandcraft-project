@@ -13,7 +13,10 @@ const CamperSchema = new mongoose.Schema(
     images: [
       {
         type: String,
-        match: [/^https?:\/\/.+\.(jpg|jpeg|png|gif)$/i, "Incorrect URL images"],
+        match: [
+          /^https?:\/\/.+\.(jpg|jpeg|png|gif)(\?.*)?$/i,
+          "Incorrect URL images",
+        ],
       },
     ],
     category: {

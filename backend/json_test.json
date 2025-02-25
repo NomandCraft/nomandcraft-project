@@ -1,0 +1,28 @@
+{
+  "name": "Explorer Van",
+  "images": [
+    "https://img.freepik.com/foto-gratis/vanlife-al-atardecer_414077-100.jpg?t=st=1740525062~exp=1740528662~hmac=484776ecac7930bce3637d371387b30f2f05e9ca43f35b562e4ebd785e90cc55&w=740",
+    "https://img.freepik.com/foto-gratis/van-al-atardecer_414077-101.jpg?t=st=1740525062~exp=1740528662~hmac=484776ecac7930bce3637d371387b30f2f05e9ca43f35b562e4ebd785e90cc55&w=740"
+  ],
+  "category": "van",
+  "capacity": 4,
+  "price": 29999.99,
+  "description": "A comfortable camper van perfect for road trips and outdoor adventures.",
+  "features": ["Solar panels", "Built-in kitchen", "Air conditioning", "Wi-Fi"],
+  "status": "available",
+  "reviews": [
+    {
+      "user": "65fd0b7e5f1d4e3a9c1a6b2d",
+      "rating": 5,
+      "comment": "Amazing experience, highly recommend!",
+      "date": "2024-02-25T10:00:00.000Z"
+    },
+    {
+      "user": "65fd0b9f4d3a4e7b8c1a7d4f",
+      "rating": 4,
+      "comment": "Very comfortable, but could use more storage space.",
+      "date": "2024-02-20T14:30:00.000Z"
+    }
+  ],
+  "averageRating": 4.5
+}
