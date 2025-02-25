@@ -9,10 +9,14 @@ app.use(express.json());
 app.use(morgan("dev"));
 app.use(cors());
 
-// Routes
+//  Routes
 app.get("/health", (req, res) => {
   res.json({ status: "ok" });
 });
+
+// Connect routes
+const camperRoutes = require("./routes/campers");
+app.use("./api/campers", camperRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

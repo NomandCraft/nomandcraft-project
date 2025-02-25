@@ -77,7 +77,6 @@ CamperSchema.virtual("formattedPrice").get(function () {
   return `$${this.price.toFixed(2)}`;
 });
 
-CamperSchema.index({ slug: 1 });
 CamperSchema.index({ price: 1 });
 /**
  * Find all campers by category
