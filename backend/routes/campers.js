@@ -12,3 +12,13 @@ router.post("/", async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 });
+
+// GET /api/campers – list of campers
+router.get("/", async (req, res) => {
+  try {
+    const campers = await Camper.find();
+    res.json(campers);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
