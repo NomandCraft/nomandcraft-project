@@ -26,6 +26,19 @@ router.get("/", async (req, res) => {
   }
 });
 
+// PUT /api/campers/:id – update the camper
+router.put("/:id", async (req, res) => {
+  const camper = await Camper.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+  });
+  res.json(camper);
+});
+// DELETE /api/campers/:id – delete a camper
+router.delete("/:id", async (req, res) => {
+  await Camper.findByIdAndDelete(req.params.id);
+  res.status(204).send();
+});
+
 // Adding a review to camper (Post/API/CAMPERS/: ID/ReView)
 router.post("/:id/review", async (req, res) => {
   try {
