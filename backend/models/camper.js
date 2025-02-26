@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const slugify = require("slugify");
-
+/* const User = require("./user"); */
 const CamperSchema = new mongoose.Schema(
   {
     name: {

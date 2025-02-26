@@ -15,8 +15,14 @@ app.get("/health", (req, res) => {
 });
 
 // Connect routes
+require("./models/user");
+require("./models/camper");
+
 const camperRoutes = require("./routes/campers");
 app.use("/api/campers", camperRoutes);
+
+const userRoutes = require("./routes/users");
+app.use("/api/users", userRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

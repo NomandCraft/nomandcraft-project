@@ -16,7 +16,7 @@ router.post("/", async (req, res) => {
 // GET /api/campers – list of campers
 router.get("/", async (req, res) => {
   try {
-    const campers = await Camper.find();
+    const campers = await Camper.find().populate("reviews.user", "name");
     res.json(campers);
   } catch (error) {
     res.status(500).json({ error: error.message });
