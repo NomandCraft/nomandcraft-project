@@ -21,17 +21,24 @@ router.post("/", async (req, res) => {
     const user = new User({ name, email, password: hashedPassword, role });
     await user.save();
 
-    res
-      .status(201)
-      .json({
-        _id: user._id,
-        name: user.name,
-        email: user.email,
-        role: user.role,
-      });
+    res.status(201).json({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      role: user.role,
+    });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 });
 
+// Get all users
+router.get("/", async (req, res) => {
+  try {
+    const users = await User.find().select("-password");
+    res.json(users);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
 module.exports = router;
