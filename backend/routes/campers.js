@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Camper = require("../models/camper");
 const User = require("../models/user");
+const mongoose = require("mongoose");
 /* const Review = require("../models/review"); */
 
 // POST /api/campers – create a camper
@@ -29,6 +30,11 @@ router.get("/", async (req, res) => {
 router.post("/:id/review", async (req, res) => {
   try {
     const { userId, rating, comment } = req.body;
+
+    if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+      return res.status(400).json({ error: "Invalid camper ID" });
+    }
+
     // Find a camper on ID
     const camper = await Camper.findById(req.params.id);
     if (!camper) {
