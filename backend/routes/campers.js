@@ -3,9 +3,8 @@ const router = express.Router();
 const Camper = require("../models/camper");
 const User = require("../models/user");
 const mongoose = require("mongoose");
-/* const Review = require("../models/review"); */
 
-// POST /api/campers – create a camper
+//  Create a camper (POST /api/campers)
 router.post("/", async (req, res) => {
   try {
     const camper = new Camper(req.body);
@@ -16,7 +15,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// GET /api/campers – list of campers
+//  Get all campers (GET /api/campers)
 router.get("/", async (req, res) => {
   try {
     const campers = await Camper.find().populate("reviews.user", "name");
@@ -26,70 +25,110 @@ router.get("/", async (req, res) => {
   }
 });
 
-// PUT /api/campers/:id – update the camper
-router.put("/:id", async (req, res) => {
-  const camper = await Camper.findByIdAndUpdate(req.params.id, req.body, {
-    new: true,
-  });
-  res.json(camper);
-});
-// DELETE /api/campers/:id – delete a camper
-router.delete("/:id", async (req, res) => {
-  await Camper.findByIdAndDelete(req.params.id);
-  res.status(204).send();
-});
-
-// Adding a review to camper (Post/API/CAMPERS/: ID/ReView)
-router.post("/:id/review", async (req, res) => {
+//  Get single camper by ID (GET /api/campers/:id)
+router.get("/:id", async (req, res) => {
   try {
-    const { userId, rating, comment } = req.body;
-
     if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
       return res.status(400).json({ error: "Invalid camper ID" });
     }
 
-    // Find a camper on ID
+    const camper = await Camper.findById(req.params.id).populate(
+      "reviews.user",
+      "name"
+    );
+    if (!camper) return res.status(404).json({ error: "Camper not found" });
+
+    res.json(camper);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+//  Update a camper (PUT /api/campers/:id)
+router.put("/:id", async (req, res) => {
+  try {
+    if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+      return res.status(400).json({ error: "Invalid camper ID" });
+    }
+
+    const camper = await Camper.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
+    if (!camper) return res.status(404).json({ error: "Camper not found" });
+
+    res.json(camper);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+//  Delete a camper (DELETE /api/campers/:id)
+router.delete("/:id", async (req, res) => {
+  try {
+    if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+      return res.status(400).json({ error: "Invalid camper ID" });
+    }
+
+    const camper = await Camper.findByIdAndDelete(req.params.id);
+    if (!camper) return res.status(404).json({ error: "Camper not found" });
+
+    res.status(204).send();
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Add or update a review for a camper (POST /api/campers/:id/review)
+router.post("/:id/review", async (req, res) => {
+  try {
+    const { userId, rating, comment } = req.body;
+
+    // Check the validity of IDs
+    if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+      return res.status(400).json({ error: "Invalid camper ID" });
+    }
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
+      return res.status(400).json({ error: "Invalid user ID" });
+    }
+
+    // We find a camper
     const camper = await Camper.findById(req.params.id);
-    if (!camper) {
-      return res.status(404).json({ error: "Camper not found" });
-    }
+    if (!camper) return res.status(404).json({ error: "Camper not found" });
 
-    // Find the user in the database
+    // We find the user
     const user = await User.findById(userId);
-    if (!user) {
-      return res.status(400).json({ error: "User not found" });
-    }
+    if (!user) return res.status(400).json({ error: "User not found" });
 
-    // Check if the user has already left a review
+    // Check if the user left a review
     const existingReview = camper.reviews.find(
       (rev) => rev.user.toString() === userId
     );
+
     if (existingReview) {
-      return res
-        .status(400)
-        .json({ error: "User has already reviewed this camper" });
+      // If the review is already there, we update it
+      existingReview.rating = rating;
+      existingReview.comment = comment;
+      existingReview.date = new Date();
+    } else {
+      // If there is no review, add a new one
+      camper.reviews.push({
+        user: user._id,
+        rating,
+        comment,
+        date: new Date(),
+      });
     }
-    // Add a new review
-    const newReview = {
-      user: user._id,
-      rating,
-      comment,
-      date: new Date(),
-    };
-    camper.reviews.push(newReview);
 
-    // Restore the average rating
-    const totalRating = camper.reviews.reduce(
-      (sum, rev) => sum + rev.rating,
-      0
-    );
-    camper.averageRating = totalRating / camper.reviews.length;
+    // Recall the average rating
+    camper.averageRating =
+      camper.reviews.reduce((sum, rev) => sum + rev.rating, 0) /
+      camper.reviews.length;
 
-    // Сохранить обновлённый кемпер
     await camper.save();
     res.status(201).json(camper);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 });
+
 module.exports = router;
