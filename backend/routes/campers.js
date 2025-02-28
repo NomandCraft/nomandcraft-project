@@ -34,7 +34,7 @@ router.get("/:id", async (req, res) => {
 
     const camper = await Camper.findById(req.params.id).populate(
       "reviews.user",
-      "name"
+      "name",
     );
     if (!camper) return res.status(404).json({ error: "Camper not found" });
 
@@ -101,7 +101,7 @@ router.post("/:id/review", async (req, res) => {
 
     // Check if the user left a review
     const existingReview = camper.reviews.find(
-      (rev) => rev.user.toString() === userId
+      (rev) => rev.user.toString() === userId,
     );
 
     if (existingReview) {

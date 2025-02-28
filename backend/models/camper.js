@@ -53,7 +53,7 @@ const CamperSchema = new mongoose.Schema(
     ],
     averageRating: { type: Number, default: 0 },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 /**

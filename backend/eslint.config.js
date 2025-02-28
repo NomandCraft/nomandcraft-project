@@ -1,28 +1,35 @@
+const js = require("@eslint/js");
+const vue = require("eslint-plugin-vue");
+const prettierPlugin = require("eslint-plugin-prettier");
+const prettierConfig = require("eslint-config-prettier");
 const globals = require("globals");
-const pluginJs = require("@eslint/js");
-const pluginVue = require("eslint-plugin-vue");
 
-/** @type {import('eslint').Linter.Config[]} */
+/** @type {import('eslint').Linter.FlatConfig[]} */
 module.exports = [
-  { files: ["**/*.{js,mjs,cjs,vue}"] },
   {
-    files: ["**/*.js"],
-    languageOptions: { sourceType: "commonjs" },
-  },
-  {
+    files: ["**/*.{js,mjs,cjs,vue}"],
     languageOptions: {
-      globals: globals.browser,
+      sourceType: "commonjs",
+      ecmaVersion: "latest",
+      globals: {
+        ...globals.node,
+        ...globals.browser,
+      },
     },
+    plugins: {
+      vue,
+      prettier: prettierPlugin,
+    },
+    rules: {
+      ...js.configs.recommended.rules,
+      ...vue.configs.recommended.rules,
+      ...prettierConfig.rules,
+      "prettier/prettier": "error",
+    },
+    ignores: ["node_modules/", "dist/", "build/", ".env", "public/"],
   },
   {
-    languageOptions: {
-      globals: globals.node, // ⬅️ Добавляем поддержку Node.js
-    },
-  },
-  pluginJs.configs.recommended,
-  ...pluginVue.configs["flat/essential"],
-  {
-    files: ["**/*.test.js", "**/__tests__/**/*.js"],
+    files: ["tests/**/*.test.js"],
     languageOptions: {
       globals: {
         ...globals.jest,
