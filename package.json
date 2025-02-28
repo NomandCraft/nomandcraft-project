@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint:backend": "cd backend && npm run lint",
-    "lint:frontend": "cd frontend && npm run lint",
+    "test": "npm run test:backend && npm run test:frontend",
+    "test:backend": "npm --prefix backend test",
+    "test:frontend": "npm --prefix frontend test",
+    "lint:backend": "npm --prefix backend run lint",
+    "lint:frontend": "npm --prefix frontend run lint",
     "lint:all": "npm run lint:backend && npm run lint:frontend"
   },
   "keywords": [],
