@@ -4,18 +4,18 @@ const cors = require("cors");
 /* const mongoose = require("mongoose"); */
 const morgan = require("morgan");
 
+const app = express();
+app.use(express.json());
+app.use(morgan("dev"));
+app.use(cors());
+
 // Connect to MongoDB
 const connectDB = require("./db");
 connectDB();
 
-// Connect routes
+// Connect models
 require("./models/user");
 require("./models/camper");
-
-//  Health Check Route
-app.get("/health", (req, res) => {
-  res.json({ status: "ok" });
-});
 
 // Connect routes
 const camperRoutes = require("./routes/campers");
@@ -24,10 +24,10 @@ app.use("/api/campers", camperRoutes);
 const userRoutes = require("./routes/users");
 app.use("/api/users", userRoutes);
 
-const app = express();
-app.use(express.json());
-app.use(morgan("dev"));
-app.use(cors());
+//  Health Check Route
+app.get("/health", (req, res) => {
+  res.json({ status: "ok" });
+});
 
 //middleware for centralized error handling.
 app.use((err, req, res, next) => {
@@ -36,7 +36,7 @@ app.use((err, req, res, next) => {
   next(err);
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
