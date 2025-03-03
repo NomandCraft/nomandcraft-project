@@ -8,7 +8,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 export default defineConfig({
   plugins: [vue(), vueDevTools()],
   css: {
-    postcss: './postcss.config.js',
+    postcss: fileURLToPath(new URL('./postcss.config.js', import.meta.url)),
   },
   resolve: {
     alias: {
