@@ -83,6 +83,10 @@ router.post("/:id/review", async (req, res) => {
   try {
     const { userId, rating, comment } = req.body;
 
+    if (!userId) {
+      return res.status(400).json({ error: "User ID is required" });
+    }
+
     // Check the validity of IDs
     if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
       return res.status(400).json({ error: "Invalid camper ID" });
@@ -101,7 +105,7 @@ router.post("/:id/review", async (req, res) => {
 
     // Check if the user left a review
     const existingReview = camper.reviews.find(
-      (rev) => rev.user.toString() === userId,
+      (rev) => rev.user && rev.user.toString() === userId.toString(),
     );
 
     if (existingReview) {
@@ -112,7 +116,7 @@ router.post("/:id/review", async (req, res) => {
     } else {
       // If there is no review, add a new one
       camper.reviews.push({
-        user: user._id,
+        user: mongoose.Types.ObjectId.createFromHexString(userId),
         rating,
         comment,
         date: new Date(),

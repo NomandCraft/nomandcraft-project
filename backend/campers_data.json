@@ -1,0 +1,2922 @@
+[
+  {
+    "name": "Camper Model 1",
+    "images": [
+      "https://img.example.com/camper_0_1.jpg",
+      "https://img.example.com/camper_0_2.jpg"
+    ],
+    "category": "motorhome",
+    "capacity": 5,
+    "price": 26330.95,
+    "description": "A top-quality motorhome with all the essential features for your adventure.",
+    "features": [
+      "GPS navigation",
+      "Heated seats",
+      "Backup camera",
+      "Bluetooth stereo"
+    ],
+    "status": "unavailable",
+    "reviews": [
+      {
+        "user": "67be5e3913004",
+        "rating": 4,
+        "comment": "Spacious and well-equipped.",
+        "date": "2024-06-10T00:56:04.076214Z"
+      },
+      {
+        "user": "67be5e3842205",
+        "rating": 5,
+        "comment": "A bit pricey, but totally worth it.",
+        "date": "2024-12-23T00:56:04.076229Z"
+      }
+    ],
+    "averageRating": 4.5,
+    "slug": "camper-model-1"
+  },
+  {
+    "name": "Camper Model 2",
+    "images": [
+      "https://img.example.com/camper_1_1.jpg",
+      "https://img.example.com/camper_1_2.jpg"
+    ],
+    "category": "motorhome",
+    "capacity": 3,
+    "price": 20358.74,
+    "description": "A top-quality motorhome with all the essential features for your adventure.",
+    "features": ["Refrigerator", "Microwave", "LED lighting", "Smart TV"],
+    "status": "available",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-2"
+  },
+  {
+    "name": "Camper Model 3",
+    "images": [
+      "https://img.example.com/camper_2_1.jpg",
+      "https://img.example.com/camper_2_2.jpg"
+    ],
+    "category": "van",
+    "capacity": 4,
+    "price": 25719.89,
+    "description": "A top-quality van with all the essential features for your adventure.",
+    "features": [
+      "Solar panels",
+      "Built-in kitchen",
+      "Air conditioning",
+      "Wi-Fi"
+    ],
+    "status": "available",
+    "reviews": [
+      {
+        "user": "67be5e3206562",
+        "rating": 3,
+        "comment": "Would rent again for sure.",
+        "date": "2024-07-25T00:56:04.076264Z"
+      },
+      {
+        "user": "67be5e3900403",
+        "rating": 3,
+        "comment": "A bit pricey, but totally worth it.",
+        "date": "2024-11-01T00:56:04.076270Z"
+      },
+      {
+        "user": "67be5e3714417",
+        "rating": 3,
+        "comment": "Would rent again for sure.",
+        "date": "2024-11-23T00:56:04.076275Z"
+      }
+    ],
+    "averageRating": 3.0,
+    "slug": "camper-model-3"
+  },
+  {
+    "name": "Camper Model 4",
+    "images": [
+      "https://img.example.com/camper_3_1.jpg",
+      "https://img.example.com/camper_3_2.jpg"
+    ],
+    "category": "van",
+    "capacity": 2,
+    "price": 46090.42,
+    "description": "A top-quality van with all the essential features for your adventure.",
+    "features": [
+      "Solar panels",
+      "Built-in kitchen",
+      "Air conditioning",
+      "Wi-Fi"
+    ],
+    "status": "available",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-4"
+  },
+  {
+    "name": "Camper Model 5",
+    "images": [
+      "https://img.example.com/camper_4_1.jpg",
+      "https://img.example.com/camper_4_2.jpg"
+    ],
+    "category": "caravan",
+    "capacity": 5,
+    "price": 41603.64,
+    "description": "A top-quality caravan with all the essential features for your adventure.",
+    "features": [
+      "Solar panels",
+      "Built-in kitchen",
+      "Air conditioning",
+      "Wi-Fi"
+    ],
+    "status": "available",
+    "reviews": [
+      {
+        "user": "67be5e3840205",
+        "rating": 5,
+        "comment": "Very comfortable, but could use more storage space.",
+        "date": "2024-12-27T00:56:04.076305Z"
+      }
+    ],
+    "averageRating": 5.0,
+    "slug": "camper-model-5"
+  },
+  {
+    "name": "Camper Model 6",
+    "images": [
+      "https://img.example.com/camper_5_1.jpg",
+      "https://img.example.com/camper_5_2.jpg"
+    ],
+    "category": "van",
+    "capacity": 4,
+    "price": 36969.1,
+    "description": "A top-quality van with all the essential features for your adventure.",
+    "features": ["Refrigerator", "Microwave", "LED lighting", "Smart TV"],
+    "status": "unavailable",
+    "reviews": [
+      {
+        "user": "67be5e3405143",
+        "rating": 5,
+        "comment": "Spacious and well-equipped.",
+        "date": "2024-05-09T00:56:04.076323Z"
+      }
+    ],
+    "averageRating": 5.0,
+    "slug": "camper-model-6"
+  },
+  {
+    "name": "Camper Model 7",
+    "images": [
+      "https://img.example.com/camper_6_1.jpg",
+      "https://img.example.com/camper_6_2.jpg"
+    ],
+    "category": "van",
+    "capacity": 5,
+    "price": 25903.39,
+    "description": "A top-quality van with all the essential features for your adventure.",
+    "features": [
+      "GPS navigation",
+      "Heated seats",
+      "Backup camera",
+      "Bluetooth stereo"
+    ],
+    "status": "unavailable",
+    "reviews": [
+      {
+        "user": "67be5e3641864",
+        "rating": 4,
+        "comment": "Spacious and well-equipped.",
+        "date": "2024-07-26T00:56:04.076340Z"
+      },
+      {
+        "user": "67be5e3949353",
+        "rating": 3,
+        "comment": "Very comfortable, but could use more storage space.",
+        "date": "2025-01-20T00:56:04.076347Z"
+      },
+      {
+        "user": "67be5e3888243",
+        "rating": 5,
+        "comment": "Amazing experience, highly recommend!",
+        "date": "2024-09-03T00:56:04.076355Z"
+      }
+    ],
+    "averageRating": 4.0,
+    "slug": "camper-model-7"
+  },
+  {
+    "name": "Camper Model 8",
+    "images": [
+      "https://img.example.com/camper_7_1.jpg",
+      "https://img.example.com/camper_7_2.jpg"
+    ],
+    "category": "trailer",
+    "capacity": 6,
+    "price": 59313.86,
+    "description": "A top-quality trailer with all the essential features for your adventure.",
+    "features": [
+      "GPS navigation",
+      "Heated seats",
+      "Backup camera",
+      "Bluetooth stereo"
+    ],
+    "status": "booked",
+    "reviews": [
+      {
+        "user": "67be5e3568883",
+        "rating": 3,
+        "comment": "Very comfortable, but could use more storage space.",
+        "date": "2024-10-24T00:56:04.076373Z"
+      }
+    ],
+    "averageRating": 3.0,
+    "slug": "camper-model-8"
+  },
+  {
+    "name": "Camper Model 9",
+    "images": [
+      "https://img.example.com/camper_8_1.jpg",
+      "https://img.example.com/camper_8_2.jpg"
+    ],
+    "category": "caravan",
+    "capacity": 4,
+    "price": 40649.46,
+    "description": "A top-quality caravan with all the essential features for your adventure.",
+    "features": [
+      "GPS navigation",
+      "Heated seats",
+      "Backup camera",
+      "Bluetooth stereo"
+    ],
+    "status": "available",
+    "reviews": [
+      {
+        "user": "67be5e3842205",
+        "rating": 4,
+        "comment": "Spacious and well-equipped.",
+        "date": "2025-01-17T00:56:04.076384Z"
+      },
+      {
+        "user": "67be5e3949353",
+        "rating": 5,
+        "comment": "Amazing experience, highly recommend!",
+        "date": "2024-04-03T00:56:04.076388Z"
+      }
+    ],
+    "averageRating": 4.5,
+    "slug": "camper-model-9"
+  },
+  {
+    "name": "Camper Model 10",
+    "images": [
+      "https://img.example.com/camper_9_1.jpg",
+      "https://img.example.com/camper_9_2.jpg"
+    ],
+    "category": "off-road",
+    "capacity": 4,
+    "price": 48216.15,
+    "description": "A top-quality off-road with all the essential features for your adventure.",
+    "features": ["Refrigerator", "Microwave", "LED lighting", "Smart TV"],
+    "status": "available",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-10"
+  },
+  {
+    "name": "Camper Model 11",
+    "images": [
+      "https://img.example.com/camper_10_1.jpg",
+      "https://img.example.com/camper_10_2.jpg"
+    ],
+    "category": "motorhome",
+    "capacity": 5,
+    "price": 26391.91,
+    "description": "A top-quality motorhome with all the essential features for your adventure.",
+    "features": [
+      "All-wheel drive",
+      "Rooftop tent",
+      "Cargo roof rack",
+      "Satellite radio"
+    ],
+    "status": "available",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-11"
+  },
+  {
+    "name": "Camper Model 12",
+    "images": [
+      "https://img.example.com/camper_11_1.jpg",
+      "https://img.example.com/camper_11_2.jpg"
+    ],
+    "category": "off-road",
+    "capacity": 3,
+    "price": 50713.7,
+    "description": "A top-quality off-road with all the essential features for your adventure.",
+    "features": ["Refrigerator", "Microwave", "LED lighting", "Smart TV"],
+    "status": "available",
+    "reviews": [
+      {
+        "user": "67be5e3332220",
+        "rating": 4,
+        "comment": "Would rent again for sure.",
+        "date": "2024-12-07T00:56:04.076411Z"
+      }
+    ],
+    "averageRating": 4.0,
+    "slug": "camper-model-12"
+  },
+  {
+    "name": "Camper Model 13",
+    "images": [
+      "https://img.example.com/camper_12_1.jpg",
+      "https://img.example.com/camper_12_2.jpg"
+    ],
+    "category": "off-road",
+    "capacity": 6,
+    "price": 57021.21,
+    "description": "A top-quality off-road with all the essential features for your adventure.",
+    "features": [
+      "All-wheel drive",
+      "Rooftop tent",
+      "Cargo roof rack",
+      "Satellite radio"
+    ],
+    "status": "booked",
+    "reviews": [
+      {
+        "user": "67be5e3391863",
+        "rating": 5,
+        "comment": "Very comfortable, but could use more storage space.",
+        "date": "2024-08-28T00:56:04.076428Z"
+      },
+      {
+        "user": "67be5e3447176",
+        "rating": 3,
+        "comment": "Perfect for a weekend getaway.",
+        "date": "2024-04-13T00:56:04.076436Z"
+      },
+      {
+        "user": "67be5e3714417",
+        "rating": 5,
+        "comment": "A bit pricey, but totally worth it.",
+        "date": "2024-12-30T00:56:04.076444Z"
+      }
+    ],
+    "averageRating": 4.3,
+    "slug": "camper-model-13"
+  },
+  {
+    "name": "Camper Model 14",
+    "images": [
+      "https://img.example.com/camper_13_1.jpg",
+      "https://img.example.com/camper_13_2.jpg"
+    ],
+    "category": "motorhome",
+    "capacity": 5,
+    "price": 39639.57,
+    "description": "A top-quality motorhome with all the essential features for your adventure.",
+    "features": [
+      "Solar panels",
+      "Built-in kitchen",
+      "Air conditioning",
+      "Wi-Fi"
+    ],
+    "status": "available",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-14"
+  },
+  {
+    "name": "Camper Model 15",
+    "images": [
+      "https://img.example.com/camper_14_1.jpg",
+      "https://img.example.com/camper_14_2.jpg"
+    ],
+    "category": "off-road",
+    "capacity": 6,
+    "price": 24029.64,
+    "description": "A top-quality off-road with all the essential features for your adventure.",
+    "features": [
+      "Solar panels",
+      "Built-in kitchen",
+      "Air conditioning",
+      "Wi-Fi"
+    ],
+    "status": "available",
+    "reviews": [
+      {
+        "user": "67be5e3832687",
+        "rating": 4,
+        "comment": "A bit pricey, but totally worth it.",
+        "date": "2024-12-15T00:56:04.076466Z"
+      },
+      {
+        "user": "67be5e3160948",
+        "rating": 4,
+        "comment": "Amazing experience, highly recommend!",
+        "date": "2024-05-25T00:56:04.076471Z"
+      },
+      {
+        "user": "67be5e3955802",
+        "rating": 4,
+        "comment": "Amazing experience, highly recommend!",
+        "date": "2024-11-09T00:56:04.076478Z"
+      }
+    ],
+    "averageRating": 4.0,
+    "slug": "camper-model-15"
+  },
+  {
+    "name": "Camper Model 16",
+    "images": [
+      "https://img.example.com/camper_15_1.jpg",
+      "https://img.example.com/camper_15_2.jpg"
+    ],
+    "category": "caravan",
+    "capacity": 4,
+    "price": 30531.0,
+    "description": "A top-quality caravan with all the essential features for your adventure.",
+    "features": ["Refrigerator", "Microwave", "LED lighting", "Smart TV"],
+    "status": "unavailable",
+    "reviews": [
+      {
+        "user": "67be5e3905034",
+        "rating": 4,
+        "comment": "A bit pricey, but totally worth it.",
+        "date": "2024-11-21T00:56:04.076495Z"
+      },
+      {
+        "user": "67be5e3559454",
+        "rating": 4,
+        "comment": "Would rent again for sure.",
+        "date": "2024-09-20T00:56:04.076503Z"
+      }
+    ],
+    "averageRating": 4.0,
+    "slug": "camper-model-16"
+  },
+  {
+    "name": "Camper Model 17",
+    "images": [
+      "https://img.example.com/camper_16_1.jpg",
+      "https://img.example.com/camper_16_2.jpg"
+    ],
+    "category": "trailer",
+    "capacity": 5,
+    "price": 29389.43,
+    "description": "A top-quality trailer with all the essential features for your adventure.",
+    "features": [
+      "Solar panels",
+      "Built-in kitchen",
+      "Air conditioning",
+      "Wi-Fi"
+    ],
+    "status": "unavailable",
+    "reviews": [
+      {
+        "user": "67be5e3288268",
+        "rating": 4,
+        "comment": "Perfect for a weekend getaway.",
+        "date": "2024-06-25T00:56:04.076529Z"
+      },
+      {
+        "user": "67be5e3124074",
+        "rating": 3,
+        "comment": "Spacious and well-equipped.",
+        "date": "2024-05-09T00:56:04.076534Z"
+      }
+    ],
+    "averageRating": 3.5,
+    "slug": "camper-model-17"
+  },
+  {
+    "name": "Camper Model 18",
+    "images": [
+      "https://img.example.com/camper_17_1.jpg",
+      "https://img.example.com/camper_17_2.jpg"
+    ],
+    "category": "trailer",
+    "capacity": 6,
+    "price": 25908.89,
+    "description": "A top-quality trailer with all the essential features for your adventure.",
+    "features": [
+      "GPS navigation",
+      "Heated seats",
+      "Backup camera",
+      "Bluetooth stereo"
+    ],
+    "status": "booked",
+    "reviews": [
+      {
+        "user": "67be5e3669950",
+        "rating": 3,
+        "comment": "Very comfortable, but could use more storage space.",
+        "date": "2024-05-19T00:56:04.076544Z"
+      },
+      {
+        "user": "67be5e3844844",
+        "rating": 3,
+        "comment": "Amazing experience, highly recommend!",
+        "date": "2024-12-11T00:56:04.076549Z"
+      }
+    ],
+    "averageRating": 3.0,
+    "slug": "camper-model-18"
+  },
+  {
+    "name": "Camper Model 19",
+    "images": [
+      "https://img.example.com/camper_18_1.jpg",
+      "https://img.example.com/camper_18_2.jpg"
+    ],
+    "category": "caravan",
+    "capacity": 6,
+    "price": 28983.55,
+    "description": "A top-quality caravan with all the essential features for your adventure.",
+    "features": [
+      "Solar panels",
+      "Built-in kitchen",
+      "Air conditioning",
+      "Wi-Fi"
+    ],
+    "status": "booked",
+    "reviews": [
+      {
+        "user": "67be5e3103461",
+        "rating": 4,
+        "comment": "Amazing experience, highly recommend!",
+        "date": "2025-01-04T00:56:04.076558Z"
+      },
+      {
+        "user": "67be5e3447176",
+        "rating": 3,
+        "comment": "Very comfortable, but could use more storage space.",
+        "date": "2024-10-11T00:56:04.076564Z"
+      },
+      {
+        "user": "67be5e3533256",
+        "rating": 3,
+        "comment": "Spacious and well-equipped.",
+        "date": "2024-03-14T00:56:04.076568Z"
+      }
+    ],
+    "averageRating": 3.3,
+    "slug": "camper-model-19"
+  },
+  {
+    "name": "Camper Model 20",
+    "images": [
+      "https://img.example.com/camper_19_1.jpg",
+      "https://img.example.com/camper_19_2.jpg"
+    ],
+    "category": "motorhome",
+    "capacity": 4,
+    "price": 53447.36,
+    "description": "A top-quality motorhome with all the essential features for your adventure.",
+    "features": [
+      "GPS navigation",
+      "Heated seats",
+      "Backup camera",
+      "Bluetooth stereo"
+    ],
+    "status": "booked",
+    "reviews": [
+      {
+        "user": "67be5e3641864",
+        "rating": 3,
+        "comment": "Amazing experience, highly recommend!",
+        "date": "2025-01-08T00:56:04.076579Z"
+      },
+      {
+        "user": "67be5e3279825",
+        "rating": 4,
+        "comment": "Spacious and well-equipped.",
+        "date": "2024-07-05T00:56:04.076587Z"
+      }
+    ],
+    "averageRating": 3.5,
+    "slug": "camper-model-20"
+  },
+  {
+    "name": "Camper Model 21",
+    "images": [
+      "https://img.example.com/camper_20_1.jpg",
+      "https://img.example.com/camper_20_2.jpg"
+    ],
+    "category": "off-road",
+    "capacity": 2,
+    "price": 37000.33,
+    "description": "A top-quality off-road with all the essential features for your adventure.",
+    "features": ["Refrigerator", "Microwave", "LED lighting", "Smart TV"],
+    "status": "booked",
+    "reviews": [
+      {
+        "user": "67be5e3955802",
+        "rating": 3,
+        "comment": "Perfect for a weekend getaway.",
+        "date": "2024-03-19T00:56:04.076603Z"
+      },
+      {
+        "user": "67be5e3897555",
+        "rating": 4,
+        "comment": "Would rent again for sure.",
+        "date": "2024-03-26T00:56:04.076612Z"
+      }
+    ],
+    "averageRating": 3.5,
+    "slug": "camper-model-21"
+  },
+  {
+    "name": "Camper Model 22",
+    "images": [
+      "https://img.example.com/camper_21_1.jpg",
+      "https://img.example.com/camper_21_2.jpg"
+    ],
+    "category": "off-road",
+    "capacity": 4,
+    "price": 43767.63,
+    "description": "A top-quality off-road with all the essential features for your adventure.",
+    "features": [
+      "All-wheel drive",
+      "Rooftop tent",
+      "Cargo roof rack",
+      "Satellite radio"
+    ],
+    "status": "booked",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-22"
+  },
+  {
+    "name": "Camper Model 23",
+    "images": [
+      "https://img.example.com/camper_22_1.jpg",
+      "https://img.example.com/camper_22_2.jpg"
+    ],
+    "category": "trailer",
+    "capacity": 5,
+    "price": 53292.35,
+    "description": "A top-quality trailer with all the essential features for your adventure.",
+    "features": ["Refrigerator", "Microwave", "LED lighting", "Smart TV"],
+    "status": "unavailable",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-23"
+  },
+  {
+    "name": "Camper Model 24",
+    "images": [
+      "https://img.example.com/camper_23_1.jpg",
+      "https://img.example.com/camper_23_2.jpg"
+    ],
+    "category": "caravan",
+    "capacity": 6,
+    "price": 35466.44,
+    "description": "A top-quality caravan with all the essential features for your adventure.",
+    "features": [
+      "GPS navigation",
+      "Heated seats",
+      "Backup camera",
+      "Bluetooth stereo"
+    ],
+    "status": "available",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-24"
+  },
+  {
+    "name": "Camper Model 25",
+    "images": [
+      "https://img.example.com/camper_24_1.jpg",
+      "https://img.example.com/camper_24_2.jpg"
+    ],
+    "category": "off-road",
+    "capacity": 4,
+    "price": 55109.06,
+    "description": "A top-quality off-road with all the essential features for your adventure.",
+    "features": [
+      "All-wheel drive",
+      "Rooftop tent",
+      "Cargo roof rack",
+      "Satellite radio"
+    ],
+    "status": "booked",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-25"
+  },
+  {
+    "name": "Camper Model 26",
+    "images": [
+      "https://img.example.com/camper_25_1.jpg",
+      "https://img.example.com/camper_25_2.jpg"
+    ],
+    "category": "caravan",
+    "capacity": 2,
+    "price": 59163.67,
+    "description": "A top-quality caravan with all the essential features for your adventure.",
+    "features": [
+      "GPS navigation",
+      "Heated seats",
+      "Backup camera",
+      "Bluetooth stereo"
+    ],
+    "status": "unavailable",
+    "reviews": [
+      {
+        "user": "67be5e3568883",
+        "rating": 3,
+        "comment": "Best camper I've ever rented!",
+        "date": "2024-11-06T00:56:04.076643Z"
+      },
+      {
+        "user": "67be5e3740986",
+        "rating": 5,
+        "comment": "Spacious and well-equipped.",
+        "date": "2024-03-16T00:56:04.076648Z"
+      },
+      {
+        "user": "67be5e3332220",
+        "rating": 3,
+        "comment": "Perfect for a weekend getaway.",
+        "date": "2024-06-11T00:56:04.076652Z"
+      }
+    ],
+    "averageRating": 3.7,
+    "slug": "camper-model-26"
+  },
+  {
+    "name": "Camper Model 27",
+    "images": [
+      "https://img.example.com/camper_26_1.jpg",
+      "https://img.example.com/camper_26_2.jpg"
+    ],
+    "category": "van",
+    "capacity": 4,
+    "price": 46482.93,
+    "description": "A top-quality van with all the essential features for your adventure.",
+    "features": [
+      "GPS navigation",
+      "Heated seats",
+      "Backup camera",
+      "Bluetooth stereo"
+    ],
+    "status": "unavailable",
+    "reviews": [
+      {
+        "user": "67be5e3740986",
+        "rating": 4,
+        "comment": "Spacious and well-equipped.",
+        "date": "2024-08-01T00:56:04.076665Z"
+      },
+      {
+        "user": "67be5e3103726",
+        "rating": 4,
+        "comment": "Amazing experience, highly recommend!",
+        "date": "2024-07-22T00:56:04.076673Z"
+      },
+      {
+        "user": "67be5e3574272",
+        "rating": 3,
+        "comment": "Perfect for a weekend getaway.",
+        "date": "2024-09-04T00:56:04.076679Z"
+      }
+    ],
+    "averageRating": 3.7,
+    "slug": "camper-model-27"
+  },
+  {
+    "name": "Camper Model 28",
+    "images": [
+      "https://img.example.com/camper_27_1.jpg",
+      "https://img.example.com/camper_27_2.jpg"
+    ],
+    "category": "van",
+    "capacity": 4,
+    "price": 55928.25,
+    "description": "A top-quality van with all the essential features for your adventure.",
+    "features": [
+      "GPS navigation",
+      "Heated seats",
+      "Backup camera",
+      "Bluetooth stereo"
+    ],
+    "status": "available",
+    "reviews": [
+      {
+        "user": "67be5e3749773",
+        "rating": 3,
+        "comment": "Would rent again for sure.",
+        "date": "2024-10-28T00:56:04.076697Z"
+      },
+      {
+        "user": "67be5e3641864",
+        "rating": 3,
+        "comment": "A bit pricey, but totally worth it.",
+        "date": "2024-10-24T00:56:04.076702Z"
+      },
+      {
+        "user": "67be5e3206562",
+        "rating": 3,
+        "comment": "Spacious and well-equipped.",
+        "date": "2024-09-05T00:56:04.076706Z"
+      }
+    ],
+    "averageRating": 3.0,
+    "slug": "camper-model-28"
+  },
+  {
+    "name": "Camper Model 29",
+    "images": [
+      "https://img.example.com/camper_28_1.jpg",
+      "https://img.example.com/camper_28_2.jpg"
+    ],
+    "category": "motorhome",
+    "capacity": 6,
+    "price": 20980.33,
+    "description": "A top-quality motorhome with all the essential features for your adventure.",
+    "features": ["Refrigerator", "Microwave", "LED lighting", "Smart TV"],
+    "status": "available",
+    "reviews": [
+      {
+        "user": "67be5e3124074",
+        "rating": 4,
+        "comment": "A bit pricey, but totally worth it.",
+        "date": "2024-10-09T00:56:04.076716Z"
+      },
+      {
+        "user": "67be5e3905034",
+        "rating": 3,
+        "comment": "Perfect for a weekend getaway.",
+        "date": "2024-04-16T00:56:04.076720Z"
+      },
+      {
+        "user": "67be5e3955802",
+        "rating": 5,
+        "comment": "Spacious and well-equipped.",
+        "date": "2025-01-02T00:56:04.076724Z"
+      }
+    ],
+    "averageRating": 4.0,
+    "slug": "camper-model-29"
+  },
+  {
+    "name": "Camper Model 30",
+    "images": [
+      "https://img.example.com/camper_29_1.jpg",
+      "https://img.example.com/camper_29_2.jpg"
+    ],
+    "category": "trailer",
+    "capacity": 4,
+    "price": 58244.43,
+    "description": "A top-quality trailer with all the essential features for your adventure.",
+    "features": [
+      "All-wheel drive",
+      "Rooftop tent",
+      "Cargo roof rack",
+      "Satellite radio"
+    ],
+    "status": "unavailable",
+    "reviews": [
+      {
+        "user": "67be5e3655551",
+        "rating": 4,
+        "comment": "Spacious and well-equipped.",
+        "date": "2025-01-19T00:56:04.076735Z"
+      },
+      {
+        "user": "67be5e3974786",
+        "rating": 5,
+        "comment": "Best camper I've ever rented!",
+        "date": "2024-09-30T00:56:04.076740Z"
+      }
+    ],
+    "averageRating": 4.5,
+    "slug": "camper-model-30"
+  },
+  {
+    "name": "Camper Model 31",
+    "images": [
+      "https://img.example.com/camper_30_1.jpg",
+      "https://img.example.com/camper_30_2.jpg"
+    ],
+    "category": "motorhome",
+    "capacity": 4,
+    "price": 27769.61,
+    "description": "A top-quality motorhome with all the essential features for your adventure.",
+    "features": [
+      "All-wheel drive",
+      "Rooftop tent",
+      "Cargo roof rack",
+      "Satellite radio"
+    ],
+    "status": "unavailable",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-31"
+  },
+  {
+    "name": "Camper Model 32",
+    "images": [
+      "https://img.example.com/camper_31_1.jpg",
+      "https://img.example.com/camper_31_2.jpg"
+    ],
+    "category": "trailer",
+    "capacity": 3,
+    "price": 55014.69,
+    "description": "A top-quality trailer with all the essential features for your adventure.",
+    "features": [
+      "All-wheel drive",
+      "Rooftop tent",
+      "Cargo roof rack",
+      "Satellite radio"
+    ],
+    "status": "unavailable",
+    "reviews": [
+      {
+        "user": "67be5e3124074",
+        "rating": 5,
+        "comment": "Would rent again for sure.",
+        "date": "2024-03-09T00:56:04.076765Z"
+      },
+      {
+        "user": "67be5e3641864",
+        "rating": 3,
+        "comment": "Best camper I've ever rented!",
+        "date": "2024-10-30T00:56:04.076773Z"
+      },
+      {
+        "user": "67be5e3749773",
+        "rating": 4,
+        "comment": "Best camper I've ever rented!",
+        "date": "2024-10-03T00:56:04.076780Z"
+      }
+    ],
+    "averageRating": 4.0,
+    "slug": "camper-model-32"
+  },
+  {
+    "name": "Camper Model 33",
+    "images": [
+      "https://img.example.com/camper_32_1.jpg",
+      "https://img.example.com/camper_32_2.jpg"
+    ],
+    "category": "motorhome",
+    "capacity": 5,
+    "price": 57828.04,
+    "description": "A top-quality motorhome with all the essential features for your adventure.",
+    "features": ["Refrigerator", "Microwave", "LED lighting", "Smart TV"],
+    "status": "booked",
+    "reviews": [
+      {
+        "user": "67be5e3332220",
+        "rating": 3,
+        "comment": "Best camper I've ever rented!",
+        "date": "2025-02-16T00:56:04.076798Z"
+      },
+      {
+        "user": "67be5e3315723",
+        "rating": 5,
+        "comment": "Spacious and well-equipped.",
+        "date": "2024-12-13T00:56:04.076806Z"
+      }
+    ],
+    "averageRating": 4.0,
+    "slug": "camper-model-33"
+  },
+  {
+    "name": "Camper Model 34",
+    "images": [
+      "https://img.example.com/camper_33_1.jpg",
+      "https://img.example.com/camper_33_2.jpg"
+    ],
+    "category": "motorhome",
+    "capacity": 6,
+    "price": 59512.77,
+    "description": "A top-quality motorhome with all the essential features for your adventure.",
+    "features": [
+      "Solar panels",
+      "Built-in kitchen",
+      "Air conditioning",
+      "Wi-Fi"
+    ],
+    "status": "available",
+    "reviews": [
+      {
+        "user": "67be5e3103461",
+        "rating": 5,
+        "comment": "Amazing experience, highly recommend!",
+        "date": "2025-02-13T00:56:04.076823Z"
+      },
+      {
+        "user": "67be5e3974786",
+        "rating": 3,
+        "comment": "A bit pricey, but totally worth it.",
+        "date": "2024-04-02T00:56:04.076827Z"
+      },
+      {
+        "user": "67be5e3641864",
+        "rating": 5,
+        "comment": "Very comfortable, but could use more storage space.",
+        "date": "2025-01-02T00:56:04.076832Z"
+      }
+    ],
+    "averageRating": 4.3,
+    "slug": "camper-model-34"
+  },
+  {
+    "name": "Camper Model 35",
+    "images": [
+      "https://img.example.com/camper_34_1.jpg",
+      "https://img.example.com/camper_34_2.jpg"
+    ],
+    "category": "van",
+    "capacity": 6,
+    "price": 27776.44,
+    "description": "A top-quality van with all the essential features for your adventure.",
+    "features": ["Refrigerator", "Microwave", "LED lighting", "Smart TV"],
+    "status": "booked",
+    "reviews": [
+      {
+        "user": "67be5e3749773",
+        "rating": 3,
+        "comment": "Spacious and well-equipped.",
+        "date": "2025-01-26T00:56:04.076843Z"
+      },
+      {
+        "user": "67be5e3844844",
+        "rating": 4,
+        "comment": "A bit pricey, but totally worth it.",
+        "date": "2024-07-03T00:56:04.076847Z"
+      },
+      {
+        "user": "67be5e3153119",
+        "rating": 4,
+        "comment": "Very comfortable, but could use more storage space.",
+        "date": "2024-06-11T00:56:04.076852Z"
+      }
+    ],
+    "averageRating": 3.7,
+    "slug": "camper-model-35"
+  },
+  {
+    "name": "Camper Model 36",
+    "images": [
+      "https://img.example.com/camper_35_1.jpg",
+      "https://img.example.com/camper_35_2.jpg"
+    ],
+    "category": "caravan",
+    "capacity": 4,
+    "price": 59439.6,
+    "description": "A top-quality caravan with all the essential features for your adventure.",
+    "features": [
+      "Solar panels",
+      "Built-in kitchen",
+      "Air conditioning",
+      "Wi-Fi"
+    ],
+    "status": "available",
+    "reviews": [
+      {
+        "user": "67be5e3568883",
+        "rating": 3,
+        "comment": "Very comfortable, but could use more storage space.",
+        "date": "2025-01-16T00:56:04.076868Z"
+      },
+      {
+        "user": "67be5e3482339",
+        "rating": 3,
+        "comment": "Very comfortable, but could use more storage space.",
+        "date": "2024-09-11T00:56:04.076876Z"
+      },
+      {
+        "user": "67be5e3103461",
+        "rating": 3,
+        "comment": "A bit pricey, but totally worth it.",
+        "date": "2024-06-27T00:56:04.076882Z"
+      }
+    ],
+    "averageRating": 3.0,
+    "slug": "camper-model-36"
+  },
+  {
+    "name": "Camper Model 37",
+    "images": [
+      "https://img.example.com/camper_36_1.jpg",
+      "https://img.example.com/camper_36_2.jpg"
+    ],
+    "category": "motorhome",
+    "capacity": 5,
+    "price": 36104.54,
+    "description": "A top-quality motorhome with all the essential features for your adventure.",
+    "features": [
+      "GPS navigation",
+      "Heated seats",
+      "Backup camera",
+      "Bluetooth stereo"
+    ],
+    "status": "booked",
+    "reviews": [
+      {
+        "user": "67be5e3844844",
+        "rating": 5,
+        "comment": "Spacious and well-equipped.",
+        "date": "2025-02-17T00:56:04.076894Z"
+      }
+    ],
+    "averageRating": 5.0,
+    "slug": "camper-model-37"
+  },
+  {
+    "name": "Camper Model 38",
+    "images": [
+      "https://img.example.com/camper_37_1.jpg",
+      "https://img.example.com/camper_37_2.jpg"
+    ],
+    "category": "trailer",
+    "capacity": 3,
+    "price": 48421.1,
+    "description": "A top-quality trailer with all the essential features for your adventure.",
+    "features": [
+      "Solar panels",
+      "Built-in kitchen",
+      "Air conditioning",
+      "Wi-Fi"
+    ],
+    "status": "unavailable",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-38"
+  },
+  {
+    "name": "Camper Model 39",
+    "images": [
+      "https://img.example.com/camper_38_1.jpg",
+      "https://img.example.com/camper_38_2.jpg"
+    ],
+    "category": "trailer",
+    "capacity": 6,
+    "price": 59866.04,
+    "description": "A top-quality trailer with all the essential features for your adventure.",
+    "features": ["Refrigerator", "Microwave", "LED lighting", "Smart TV"],
+    "status": "booked",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-39"
+  },
+  {
+    "name": "Camper Model 40",
+    "images": [
+      "https://img.example.com/camper_39_1.jpg",
+      "https://img.example.com/camper_39_2.jpg"
+    ],
+    "category": "off-road",
+    "capacity": 6,
+    "price": 50093.46,
+    "description": "A top-quality off-road with all the essential features for your adventure.",
+    "features": [
+      "Expandable awning",
+      "Off-road tires",
+      "Extra storage",
+      "Outdoor shower"
+    ],
+    "status": "unavailable",
+    "reviews": [
+      {
+        "user": "67be5e3160948",
+        "rating": 4,
+        "comment": "Spacious and well-equipped.",
+        "date": "2024-12-23T00:56:04.076932Z"
+      },
+      {
+        "user": "67be5e3897555",
+        "rating": 4,
+        "comment": "Would rent again for sure.",
+        "date": "2024-05-29T00:56:04.076939Z"
+      },
+      {
+        "user": "67be5e3669950",
+        "rating": 3,
+        "comment": "Very comfortable, but could use more storage space.",
+        "date": "2024-05-08T00:56:04.076944Z"
+      }
+    ],
+    "averageRating": 3.7,
+    "slug": "camper-model-40"
+  },
+  {
+    "name": "Camper Model 41",
+    "images": [
+      "https://img.example.com/camper_40_1.jpg",
+      "https://img.example.com/camper_40_2.jpg"
+    ],
+    "category": "motorhome",
+    "capacity": 6,
+    "price": 52887.9,
+    "description": "A top-quality motorhome with all the essential features for your adventure.",
+    "features": [
+      "All-wheel drive",
+      "Rooftop tent",
+      "Cargo roof rack",
+      "Satellite radio"
+    ],
+    "status": "available",
+    "reviews": [
+      {
+        "user": "67be5e3842205",
+        "rating": 5,
+        "comment": "Would rent again for sure.",
+        "date": "2025-02-17T00:56:04.076955Z"
+      },
+      {
+        "user": "67be5e3842205",
+        "rating": 4,
+        "comment": "Very comfortable, but could use more storage space.",
+        "date": "2024-04-02T00:56:04.076960Z"
+      }
+    ],
+    "averageRating": 4.5,
+    "slug": "camper-model-41"
+  },
+  {
+    "name": "Camper Model 42",
+    "images": [
+      "https://img.example.com/camper_41_1.jpg",
+      "https://img.example.com/camper_41_2.jpg"
+    ],
+    "category": "van",
+    "capacity": 4,
+    "price": 45000.77,
+    "description": "A top-quality van with all the essential features for your adventure.",
+    "features": [
+      "Expandable awning",
+      "Off-road tires",
+      "Extra storage",
+      "Outdoor shower"
+    ],
+    "status": "available",
+    "reviews": [
+      {
+        "user": "67be5e3559454",
+        "rating": 4,
+        "comment": "Very comfortable, but could use more storage space.",
+        "date": "2024-06-27T00:56:04.076970Z"
+      }
+    ],
+    "averageRating": 4.0,
+    "slug": "camper-model-42"
+  },
+  {
+    "name": "Camper Model 43",
+    "images": [
+      "https://img.example.com/camper_42_1.jpg",
+      "https://img.example.com/camper_42_2.jpg"
+    ],
+    "category": "caravan",
+    "capacity": 4,
+    "price": 23472.57,
+    "description": "A top-quality caravan with all the essential features for your adventure.",
+    "features": [
+      "All-wheel drive",
+      "Rooftop tent",
+      "Cargo roof rack",
+      "Satellite radio"
+    ],
+    "status": "booked",
+    "reviews": [
+      {
+        "user": "67be5e3391863",
+        "rating": 3,
+        "comment": "A bit pricey, but totally worth it.",
+        "date": "2024-11-12T00:56:04.076979Z"
+      },
+      {
+        "user": "67be5e3900403",
+        "rating": 5,
+        "comment": "A bit pricey, but totally worth it.",
+        "date": "2024-07-07T00:56:04.076984Z"
+      }
+    ],
+    "averageRating": 4.0,
+    "slug": "camper-model-43"
+  },
+  {
+    "name": "Camper Model 44",
+    "images": [
+      "https://img.example.com/camper_43_1.jpg",
+      "https://img.example.com/camper_43_2.jpg"
+    ],
+    "category": "trailer",
+    "capacity": 6,
+    "price": 57203.97,
+    "description": "A top-quality trailer with all the essential features for your adventure.",
+    "features": [
+      "Expandable awning",
+      "Off-road tires",
+      "Extra storage",
+      "Outdoor shower"
+    ],
+    "status": "available",
+    "reviews": [
+      {
+        "user": "67be5e3974786",
+        "rating": 5,
+        "comment": "Perfect for a weekend getaway.",
+        "date": "2025-02-25T00:56:04.076994Z"
+      }
+    ],
+    "averageRating": 5.0,
+    "slug": "camper-model-44"
+  },
+  {
+    "name": "Camper Model 45",
+    "images": [
+      "https://img.example.com/camper_44_1.jpg",
+      "https://img.example.com/camper_44_2.jpg"
+    ],
+    "category": "trailer",
+    "capacity": 6,
+    "price": 47749.49,
+    "description": "A top-quality trailer with all the essential features for your adventure.",
+    "features": ["Refrigerator", "Microwave", "LED lighting", "Smart TV"],
+    "status": "available",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-45"
+  },
+  {
+    "name": "Camper Model 46",
+    "images": [
+      "https://img.example.com/camper_45_1.jpg",
+      "https://img.example.com/camper_45_2.jpg"
+    ],
+    "category": "caravan",
+    "capacity": 3,
+    "price": 30446.7,
+    "description": "A top-quality caravan with all the essential features for your adventure.",
+    "features": [
+      "Expandable awning",
+      "Off-road tires",
+      "Extra storage",
+      "Outdoor shower"
+    ],
+    "status": "unavailable",
+    "reviews": [
+      {
+        "user": "67be5e3315723",
+        "rating": 5,
+        "comment": "Spacious and well-equipped.",
+        "date": "2024-10-11T00:56:04.077008Z"
+      },
+      {
+        "user": "67be5e3445345",
+        "rating": 4,
+        "comment": "Amazing experience, highly recommend!",
+        "date": "2025-02-24T00:56:04.077013Z"
+      }
+    ],
+    "averageRating": 4.5,
+    "slug": "camper-model-46"
+  },
+  {
+    "name": "Camper Model 47",
+    "images": [
+      "https://img.example.com/camper_46_1.jpg",
+      "https://img.example.com/camper_46_2.jpg"
+    ],
+    "category": "trailer",
+    "capacity": 5,
+    "price": 20129.25,
+    "description": "A top-quality trailer with all the essential features for your adventure.",
+    "features": [
+      "GPS navigation",
+      "Heated seats",
+      "Backup camera",
+      "Bluetooth stereo"
+    ],
+    "status": "available",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-47"
+  },
+  {
+    "name": "Camper Model 48",
+    "images": [
+      "https://img.example.com/camper_47_1.jpg",
+      "https://img.example.com/camper_47_2.jpg"
+    ],
+    "category": "van",
+    "capacity": 6,
+    "price": 21772.41,
+    "description": "A top-quality van with all the essential features for your adventure.",
+    "features": [
+      "Solar panels",
+      "Built-in kitchen",
+      "Air conditioning",
+      "Wi-Fi"
+    ],
+    "status": "booked",
+    "reviews": [
+      {
+        "user": "67be5e3346296",
+        "rating": 3,
+        "comment": "Perfect for a weekend getaway.",
+        "date": "2024-10-01T00:56:04.077040Z"
+      }
+    ],
+    "averageRating": 3.0,
+    "slug": "camper-model-48"
+  },
+  {
+    "name": "Camper Model 49",
+    "images": [
+      "https://img.example.com/camper_48_1.jpg",
+      "https://img.example.com/camper_48_2.jpg"
+    ],
+    "category": "off-road",
+    "capacity": 3,
+    "price": 53534.48,
+    "description": "A top-quality off-road with all the essential features for your adventure.",
+    "features": ["Refrigerator", "Microwave", "LED lighting", "Smart TV"],
+    "status": "unavailable",
+    "reviews": [
+      {
+        "user": "67be5e3770874",
+        "rating": 5,
+        "comment": "Would rent again for sure.",
+        "date": "2024-11-01T00:56:04.077051Z"
+      }
+    ],
+    "averageRating": 5.0,
+    "slug": "camper-model-49"
+  },
+  {
+    "name": "Camper Model 50",
+    "images": [
+      "https://img.example.com/camper_49_1.jpg",
+      "https://img.example.com/camper_49_2.jpg"
+    ],
+    "category": "off-road",
+    "capacity": 2,
+    "price": 57174.14,
+    "description": "A top-quality off-road with all the essential features for your adventure.",
+    "features": [
+      "Solar panels",
+      "Built-in kitchen",
+      "Air conditioning",
+      "Wi-Fi"
+    ],
+    "status": "available",
+    "reviews": [
+      {
+        "user": "67be5e3832687",
+        "rating": 4,
+        "comment": "Spacious and well-equipped.",
+        "date": "2024-05-18T00:56:04.077067Z"
+      },
+      {
+        "user": "67be5e3909581",
+        "rating": 3,
+        "comment": "Spacious and well-equipped.",
+        "date": "2024-11-22T00:56:04.077074Z"
+      },
+      {
+        "user": "67be5e3669950",
+        "rating": 3,
+        "comment": "Best camper I've ever rented!",
+        "date": "2024-08-11T00:56:04.077082Z"
+      }
+    ],
+    "averageRating": 3.3,
+    "slug": "camper-model-50"
+  },
+  {
+    "name": "Camper Model 51",
+    "images": [
+      "https://img.example.com/camper_50_1.jpg",
+      "https://img.example.com/camper_50_2.jpg"
+    ],
+    "category": "van",
+    "capacity": 5,
+    "price": 43416.45,
+    "description": "A top-quality van with all the essential features for your adventure.",
+    "features": ["Refrigerator", "Microwave", "LED lighting", "Smart TV"],
+    "status": "available",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-51"
+  },
+  {
+    "name": "Camper Model 52",
+    "images": [
+      "https://img.example.com/camper_51_1.jpg",
+      "https://img.example.com/camper_51_2.jpg"
+    ],
+    "category": "motorhome",
+    "capacity": 3,
+    "price": 47267.52,
+    "description": "A top-quality motorhome with all the essential features for your adventure.",
+    "features": [
+      "All-wheel drive",
+      "Rooftop tent",
+      "Cargo roof rack",
+      "Satellite radio"
+    ],
+    "status": "unavailable",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-52"
+  },
+  {
+    "name": "Camper Model 53",
+    "images": [
+      "https://img.example.com/camper_52_1.jpg",
+      "https://img.example.com/camper_52_2.jpg"
+    ],
+    "category": "off-road",
+    "capacity": 5,
+    "price": 47802.98,
+    "description": "A top-quality off-road with all the essential features for your adventure.",
+    "features": [
+      "GPS navigation",
+      "Heated seats",
+      "Backup camera",
+      "Bluetooth stereo"
+    ],
+    "status": "booked",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-53"
+  },
+  {
+    "name": "Camper Model 54",
+    "images": [
+      "https://img.example.com/camper_53_1.jpg",
+      "https://img.example.com/camper_53_2.jpg"
+    ],
+    "category": "trailer",
+    "capacity": 4,
+    "price": 34574.55,
+    "description": "A top-quality trailer with all the essential features for your adventure.",
+    "features": [
+      "GPS navigation",
+      "Heated seats",
+      "Backup camera",
+      "Bluetooth stereo"
+    ],
+    "status": "available",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-54"
+  },
+  {
+    "name": "Camper Model 55",
+    "images": [
+      "https://img.example.com/camper_54_1.jpg",
+      "https://img.example.com/camper_54_2.jpg"
+    ],
+    "category": "trailer",
+    "capacity": 2,
+    "price": 52693.87,
+    "description": "A top-quality trailer with all the essential features for your adventure.",
+    "features": [
+      "All-wheel drive",
+      "Rooftop tent",
+      "Cargo roof rack",
+      "Satellite radio"
+    ],
+    "status": "unavailable",
+    "reviews": [
+      {
+        "user": "67be5e3533256",
+        "rating": 4,
+        "comment": "Best camper I've ever rented!",
+        "date": "2025-02-11T00:56:04.077124Z"
+      },
+      {
+        "user": "67be5e3949353",
+        "rating": 3,
+        "comment": "Perfect for a weekend getaway.",
+        "date": "2025-03-01T00:56:04.077132Z"
+      }
+    ],
+    "averageRating": 3.5,
+    "slug": "camper-model-55"
+  },
+  {
+    "name": "Camper Model 56",
+    "images": [
+      "https://img.example.com/camper_55_1.jpg",
+      "https://img.example.com/camper_55_2.jpg"
+    ],
+    "category": "trailer",
+    "capacity": 5,
+    "price": 44450.92,
+    "description": "A top-quality trailer with all the essential features for your adventure.",
+    "features": [
+      "Expandable awning",
+      "Off-road tires",
+      "Extra storage",
+      "Outdoor shower"
+    ],
+    "status": "available",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-56"
+  },
+  {
+    "name": "Camper Model 57",
+    "images": [
+      "https://img.example.com/camper_56_1.jpg",
+      "https://img.example.com/camper_56_2.jpg"
+    ],
+    "category": "motorhome",
+    "capacity": 5,
+    "price": 40896.89,
+    "description": "A top-quality motorhome with all the essential features for your adventure.",
+    "features": ["Refrigerator", "Microwave", "LED lighting", "Smart TV"],
+    "status": "available",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-57"
+  },
+  {
+    "name": "Camper Model 58",
+    "images": [
+      "https://img.example.com/camper_57_1.jpg",
+      "https://img.example.com/camper_57_2.jpg"
+    ],
+    "category": "trailer",
+    "capacity": 5,
+    "price": 46627.36,
+    "description": "A top-quality trailer with all the essential features for your adventure.",
+    "features": [
+      "Expandable awning",
+      "Off-road tires",
+      "Extra storage",
+      "Outdoor shower"
+    ],
+    "status": "available",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-58"
+  },
+  {
+    "name": "Camper Model 59",
+    "images": [
+      "https://img.example.com/camper_58_1.jpg",
+      "https://img.example.com/camper_58_2.jpg"
+    ],
+    "category": "van",
+    "capacity": 3,
+    "price": 25549.59,
+    "description": "A top-quality van with all the essential features for your adventure.",
+    "features": [
+      "GPS navigation",
+      "Heated seats",
+      "Backup camera",
+      "Bluetooth stereo"
+    ],
+    "status": "booked",
+    "reviews": [
+      {
+        "user": "67be5e3206562",
+        "rating": 5,
+        "comment": "A bit pricey, but totally worth it.",
+        "date": "2024-07-22T00:56:04.077171Z"
+      },
+      {
+        "user": "67be5e3888243",
+        "rating": 3,
+        "comment": "Very comfortable, but could use more storage space.",
+        "date": "2024-11-30T00:56:04.077179Z"
+      },
+      {
+        "user": "67be5e3832687",
+        "rating": 4,
+        "comment": "Would rent again for sure.",
+        "date": "2025-01-14T00:56:04.077186Z"
+      }
+    ],
+    "averageRating": 4.0,
+    "slug": "camper-model-59"
+  },
+  {
+    "name": "Camper Model 60",
+    "images": [
+      "https://img.example.com/camper_59_1.jpg",
+      "https://img.example.com/camper_59_2.jpg"
+    ],
+    "category": "van",
+    "capacity": 5,
+    "price": 29506.59,
+    "description": "A top-quality van with all the essential features for your adventure.",
+    "features": ["Refrigerator", "Microwave", "LED lighting", "Smart TV"],
+    "status": "booked",
+    "reviews": [
+      {
+        "user": "67be5e3482339",
+        "rating": 5,
+        "comment": "Very comfortable, but could use more storage space.",
+        "date": "2024-11-10T00:56:04.077198Z"
+      },
+      {
+        "user": "67be5e3288268",
+        "rating": 4,
+        "comment": "Perfect for a weekend getaway.",
+        "date": "2024-09-25T00:56:04.077202Z"
+      },
+      {
+        "user": "67be5e3533256",
+        "rating": 5,
+        "comment": "Spacious and well-equipped.",
+        "date": "2024-04-06T00:56:04.077206Z"
+      }
+    ],
+    "averageRating": 4.7,
+    "slug": "camper-model-60"
+  },
+  {
+    "name": "Camper Model 61",
+    "images": [
+      "https://img.example.com/camper_60_1.jpg",
+      "https://img.example.com/camper_60_2.jpg"
+    ],
+    "category": "van",
+    "capacity": 4,
+    "price": 54826.94,
+    "description": "A top-quality van with all the essential features for your adventure.",
+    "features": [
+      "Expandable awning",
+      "Off-road tires",
+      "Extra storage",
+      "Outdoor shower"
+    ],
+    "status": "available",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-61"
+  },
+  {
+    "name": "Camper Model 62",
+    "images": [
+      "https://img.example.com/camper_61_1.jpg",
+      "https://img.example.com/camper_61_2.jpg"
+    ],
+    "category": "van",
+    "capacity": 2,
+    "price": 49131.08,
+    "description": "A top-quality van with all the essential features for your adventure.",
+    "features": [
+      "Expandable awning",
+      "Off-road tires",
+      "Extra storage",
+      "Outdoor shower"
+    ],
+    "status": "booked",
+    "reviews": [
+      {
+        "user": "67be5e3641864",
+        "rating": 5,
+        "comment": "Amazing experience, highly recommend!",
+        "date": "2025-02-18T00:56:04.077220Z"
+      },
+      {
+        "user": "67be5e3905034",
+        "rating": 3,
+        "comment": "Very comfortable, but could use more storage space.",
+        "date": "2024-04-09T00:56:04.077224Z"
+      },
+      {
+        "user": "67be5e3574272",
+        "rating": 4,
+        "comment": "Spacious and well-equipped.",
+        "date": "2025-01-18T00:56:04.077228Z"
+      }
+    ],
+    "averageRating": 4.0,
+    "slug": "camper-model-62"
+  },
+  {
+    "name": "Camper Model 63",
+    "images": [
+      "https://img.example.com/camper_62_1.jpg",
+      "https://img.example.com/camper_62_2.jpg"
+    ],
+    "category": "off-road",
+    "capacity": 6,
+    "price": 21693.61,
+    "description": "A top-quality off-road with all the essential features for your adventure.",
+    "features": [
+      "Expandable awning",
+      "Off-road tires",
+      "Extra storage",
+      "Outdoor shower"
+    ],
+    "status": "unavailable",
+    "reviews": [
+      {
+        "user": "67be5e3580823",
+        "rating": 3,
+        "comment": "Spacious and well-equipped.",
+        "date": "2024-05-04T00:56:04.077238Z"
+      },
+      {
+        "user": "67be5e3789479",
+        "rating": 5,
+        "comment": "Amazing experience, highly recommend!",
+        "date": "2024-08-30T00:56:04.077243Z"
+      },
+      {
+        "user": "67be5e3315723",
+        "rating": 5,
+        "comment": "Perfect for a weekend getaway.",
+        "date": "2024-10-03T00:56:04.077251Z"
+      }
+    ],
+    "averageRating": 4.3,
+    "slug": "camper-model-63"
+  },
+  {
+    "name": "Camper Model 64",
+    "images": [
+      "https://img.example.com/camper_63_1.jpg",
+      "https://img.example.com/camper_63_2.jpg"
+    ],
+    "category": "van",
+    "capacity": 4,
+    "price": 34004.81,
+    "description": "A top-quality van with all the essential features for your adventure.",
+    "features": [
+      "Solar panels",
+      "Built-in kitchen",
+      "Air conditioning",
+      "Wi-Fi"
+    ],
+    "status": "booked",
+    "reviews": [
+      {
+        "user": "67be5e3220550",
+        "rating": 3,
+        "comment": "Would rent again for sure.",
+        "date": "2024-12-09T00:56:04.077271Z"
+      },
+      {
+        "user": "67be5e3469540",
+        "rating": 4,
+        "comment": "Perfect for a weekend getaway.",
+        "date": "2024-08-04T00:56:04.077279Z"
+      }
+    ],
+    "averageRating": 3.5,
+    "slug": "camper-model-64"
+  },
+  {
+    "name": "Camper Model 65",
+    "images": [
+      "https://img.example.com/camper_64_1.jpg",
+      "https://img.example.com/camper_64_2.jpg"
+    ],
+    "category": "van",
+    "capacity": 4,
+    "price": 36652.89,
+    "description": "A top-quality van with all the essential features for your adventure.",
+    "features": [
+      "GPS navigation",
+      "Heated seats",
+      "Backup camera",
+      "Bluetooth stereo"
+    ],
+    "status": "available",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-65"
+  },
+  {
+    "name": "Camper Model 66",
+    "images": [
+      "https://img.example.com/camper_65_1.jpg",
+      "https://img.example.com/camper_65_2.jpg"
+    ],
+    "category": "motorhome",
+    "capacity": 6,
+    "price": 28286.2,
+    "description": "A top-quality motorhome with all the essential features for your adventure.",
+    "features": [
+      "Solar panels",
+      "Built-in kitchen",
+      "Air conditioning",
+      "Wi-Fi"
+    ],
+    "status": "available",
+    "reviews": [
+      {
+        "user": "67be5e3251757",
+        "rating": 4,
+        "comment": "Perfect for a weekend getaway.",
+        "date": "2024-03-22T00:56:04.077303Z"
+      },
+      {
+        "user": "67be5e3574010",
+        "rating": 5,
+        "comment": "Perfect for a weekend getaway.",
+        "date": "2024-08-02T00:56:04.077308Z"
+      }
+    ],
+    "averageRating": 4.5,
+    "slug": "camper-model-66"
+  },
+  {
+    "name": "Camper Model 67",
+    "images": [
+      "https://img.example.com/camper_66_1.jpg",
+      "https://img.example.com/camper_66_2.jpg"
+    ],
+    "category": "off-road",
+    "capacity": 6,
+    "price": 27552.56,
+    "description": "A top-quality off-road with all the essential features for your adventure.",
+    "features": [
+      "GPS navigation",
+      "Heated seats",
+      "Backup camera",
+      "Bluetooth stereo"
+    ],
+    "status": "unavailable",
+    "reviews": [
+      {
+        "user": "67be5e3568883",
+        "rating": 4,
+        "comment": "Best camper I've ever rented!",
+        "date": "2024-06-27T00:56:04.077318Z"
+      },
+      {
+        "user": "67be5e3840205",
+        "rating": 5,
+        "comment": "Perfect for a weekend getaway.",
+        "date": "2025-02-23T00:56:04.077322Z"
+      }
+    ],
+    "averageRating": 4.5,
+    "slug": "camper-model-67"
+  },
+  {
+    "name": "Camper Model 68",
+    "images": [
+      "https://img.example.com/camper_67_1.jpg",
+      "https://img.example.com/camper_67_2.jpg"
+    ],
+    "category": "van",
+    "capacity": 5,
+    "price": 42565.65,
+    "description": "A top-quality van with all the essential features for your adventure.",
+    "features": [
+      "Expandable awning",
+      "Off-road tires",
+      "Extra storage",
+      "Outdoor shower"
+    ],
+    "status": "booked",
+    "reviews": [
+      {
+        "user": "67be5e3905034",
+        "rating": 5,
+        "comment": "A bit pricey, but totally worth it.",
+        "date": "2024-06-28T00:56:04.077332Z"
+      },
+      {
+        "user": "67be5e3641864",
+        "rating": 3,
+        "comment": "Perfect for a weekend getaway.",
+        "date": "2024-05-19T00:56:04.077336Z"
+      },
+      {
+        "user": "67be5e3574272",
+        "rating": 3,
+        "comment": "Spacious and well-equipped.",
+        "date": "2024-11-27T00:56:04.077341Z"
+      }
+    ],
+    "averageRating": 3.7,
+    "slug": "camper-model-68"
+  },
+  {
+    "name": "Camper Model 69",
+    "images": [
+      "https://img.example.com/camper_68_1.jpg",
+      "https://img.example.com/camper_68_2.jpg"
+    ],
+    "category": "caravan",
+    "capacity": 3,
+    "price": 32920.71,
+    "description": "A top-quality caravan with all the essential features for your adventure.",
+    "features": [
+      "Solar panels",
+      "Built-in kitchen",
+      "Air conditioning",
+      "Wi-Fi"
+    ],
+    "status": "unavailable",
+    "reviews": [
+      {
+        "user": "67be5e3949353",
+        "rating": 3,
+        "comment": "Very comfortable, but could use more storage space.",
+        "date": "2024-08-12T00:56:04.077359Z"
+      },
+      {
+        "user": "67be5e3888243",
+        "rating": 3,
+        "comment": "Best camper I've ever rented!",
+        "date": "2025-01-26T00:56:04.077367Z"
+      }
+    ],
+    "averageRating": 3.0,
+    "slug": "camper-model-69"
+  },
+  {
+    "name": "Camper Model 70",
+    "images": [
+      "https://img.example.com/camper_69_1.jpg",
+      "https://img.example.com/camper_69_2.jpg"
+    ],
+    "category": "off-road",
+    "capacity": 2,
+    "price": 53438.67,
+    "description": "A top-quality off-road with all the essential features for your adventure.",
+    "features": ["Refrigerator", "Microwave", "LED lighting", "Smart TV"],
+    "status": "booked",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-70"
+  },
+  {
+    "name": "Camper Model 71",
+    "images": [
+      "https://img.example.com/camper_70_1.jpg",
+      "https://img.example.com/camper_70_2.jpg"
+    ],
+    "category": "trailer",
+    "capacity": 4,
+    "price": 58894.33,
+    "description": "A top-quality trailer with all the essential features for your adventure.",
+    "features": [
+      "All-wheel drive",
+      "Rooftop tent",
+      "Cargo roof rack",
+      "Satellite radio"
+    ],
+    "status": "available",
+    "reviews": [
+      {
+        "user": "67be5e3103726",
+        "rating": 3,
+        "comment": "Amazing experience, highly recommend!",
+        "date": "2024-06-11T00:56:04.077382Z"
+      },
+      {
+        "user": "67be5e3449891",
+        "rating": 4,
+        "comment": "A bit pricey, but totally worth it.",
+        "date": "2024-06-25T00:56:04.077386Z"
+      },
+      {
+        "user": "67be5e3533256",
+        "rating": 5,
+        "comment": "Very comfortable, but could use more storage space.",
+        "date": "2025-01-13T00:56:04.077391Z"
+      }
+    ],
+    "averageRating": 4.0,
+    "slug": "camper-model-71"
+  },
+  {
+    "name": "Camper Model 72",
+    "images": [
+      "https://img.example.com/camper_71_1.jpg",
+      "https://img.example.com/camper_71_2.jpg"
+    ],
+    "category": "trailer",
+    "capacity": 3,
+    "price": 43835.76,
+    "description": "A top-quality trailer with all the essential features for your adventure.",
+    "features": ["Refrigerator", "Microwave", "LED lighting", "Smart TV"],
+    "status": "booked",
+    "reviews": [
+      {
+        "user": "67be5e3475643",
+        "rating": 4,
+        "comment": "Would rent again for sure.",
+        "date": "2024-12-04T00:56:04.077400Z"
+      },
+      {
+        "user": "67be5e3445345",
+        "rating": 3,
+        "comment": "Would rent again for sure.",
+        "date": "2024-09-14T00:56:04.077405Z"
+      }
+    ],
+    "averageRating": 3.5,
+    "slug": "camper-model-72"
+  },
+  {
+    "name": "Camper Model 73",
+    "images": [
+      "https://img.example.com/camper_72_1.jpg",
+      "https://img.example.com/camper_72_2.jpg"
+    ],
+    "category": "off-road",
+    "capacity": 2,
+    "price": 25445.84,
+    "description": "A top-quality off-road with all the essential features for your adventure.",
+    "features": [
+      "Solar panels",
+      "Built-in kitchen",
+      "Air conditioning",
+      "Wi-Fi"
+    ],
+    "status": "available",
+    "reviews": [
+      {
+        "user": "67be5e3900403",
+        "rating": 5,
+        "comment": "A bit pricey, but totally worth it.",
+        "date": "2024-11-27T00:56:04.077421Z"
+      },
+      {
+        "user": "67be5e3840205",
+        "rating": 5,
+        "comment": "Spacious and well-equipped.",
+        "date": "2024-04-17T00:56:04.077428Z"
+      }
+    ],
+    "averageRating": 5.0,
+    "slug": "camper-model-73"
+  },
+  {
+    "name": "Camper Model 74",
+    "images": [
+      "https://img.example.com/camper_73_1.jpg",
+      "https://img.example.com/camper_73_2.jpg"
+    ],
+    "category": "caravan",
+    "capacity": 2,
+    "price": 23008.65,
+    "description": "A top-quality caravan with all the essential features for your adventure.",
+    "features": [
+      "GPS navigation",
+      "Heated seats",
+      "Backup camera",
+      "Bluetooth stereo"
+    ],
+    "status": "booked",
+    "reviews": [
+      {
+        "user": "67be5e3103461",
+        "rating": 4,
+        "comment": "Spacious and well-equipped.",
+        "date": "2024-09-11T00:56:04.077444Z"
+      },
+      {
+        "user": "67be5e3220550",
+        "rating": 5,
+        "comment": "Would rent again for sure.",
+        "date": "2024-11-19T00:56:04.077450Z"
+      }
+    ],
+    "averageRating": 4.5,
+    "slug": "camper-model-74"
+  },
+  {
+    "name": "Camper Model 75",
+    "images": [
+      "https://img.example.com/camper_74_1.jpg",
+      "https://img.example.com/camper_74_2.jpg"
+    ],
+    "category": "trailer",
+    "capacity": 6,
+    "price": 54129.49,
+    "description": "A top-quality trailer with all the essential features for your adventure.",
+    "features": [
+      "Solar panels",
+      "Built-in kitchen",
+      "Air conditioning",
+      "Wi-Fi"
+    ],
+    "status": "booked",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-75"
+  },
+  {
+    "name": "Camper Model 76",
+    "images": [
+      "https://img.example.com/camper_75_1.jpg",
+      "https://img.example.com/camper_75_2.jpg"
+    ],
+    "category": "off-road",
+    "capacity": 2,
+    "price": 54487.47,
+    "description": "A top-quality off-road with all the essential features for your adventure.",
+    "features": [
+      "Expandable awning",
+      "Off-road tires",
+      "Extra storage",
+      "Outdoor shower"
+    ],
+    "status": "unavailable",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-76"
+  },
+  {
+    "name": "Camper Model 77",
+    "images": [
+      "https://img.example.com/camper_76_1.jpg",
+      "https://img.example.com/camper_76_2.jpg"
+    ],
+    "category": "caravan",
+    "capacity": 6,
+    "price": 50995.79,
+    "description": "A top-quality caravan with all the essential features for your adventure.",
+    "features": [
+      "Expandable awning",
+      "Off-road tires",
+      "Extra storage",
+      "Outdoor shower"
+    ],
+    "status": "unavailable",
+    "reviews": [
+      {
+        "user": "67be5e3475643",
+        "rating": 5,
+        "comment": "Perfect for a weekend getaway.",
+        "date": "2024-05-19T00:56:04.077474Z"
+      },
+      {
+        "user": "67be5e3888243",
+        "rating": 4,
+        "comment": "Very comfortable, but could use more storage space.",
+        "date": "2024-03-09T00:56:04.077478Z"
+      }
+    ],
+    "averageRating": 4.5,
+    "slug": "camper-model-77"
+  },
+  {
+    "name": "Camper Model 78",
+    "images": [
+      "https://img.example.com/camper_77_1.jpg",
+      "https://img.example.com/camper_77_2.jpg"
+    ],
+    "category": "off-road",
+    "capacity": 6,
+    "price": 35179.41,
+    "description": "A top-quality off-road with all the essential features for your adventure.",
+    "features": ["Refrigerator", "Microwave", "LED lighting", "Smart TV"],
+    "status": "unavailable",
+    "reviews": [
+      {
+        "user": "67be5e3145716",
+        "rating": 5,
+        "comment": "Spacious and well-equipped.",
+        "date": "2024-04-01T00:56:04.077492Z"
+      }
+    ],
+    "averageRating": 5.0,
+    "slug": "camper-model-78"
+  },
+  {
+    "name": "Camper Model 79",
+    "images": [
+      "https://img.example.com/camper_78_1.jpg",
+      "https://img.example.com/camper_78_2.jpg"
+    ],
+    "category": "motorhome",
+    "capacity": 3,
+    "price": 46456.63,
+    "description": "A top-quality motorhome with all the essential features for your adventure.",
+    "features": [
+      "All-wheel drive",
+      "Rooftop tent",
+      "Cargo roof rack",
+      "Satellite radio"
+    ],
+    "status": "unavailable",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-79"
+  },
+  {
+    "name": "Camper Model 80",
+    "images": [
+      "https://img.example.com/camper_79_1.jpg",
+      "https://img.example.com/camper_79_2.jpg"
+    ],
+    "category": "caravan",
+    "capacity": 2,
+    "price": 54643.35,
+    "description": "A top-quality caravan with all the essential features for your adventure.",
+    "features": [
+      "All-wheel drive",
+      "Rooftop tent",
+      "Cargo roof rack",
+      "Satellite radio"
+    ],
+    "status": "booked",
+    "reviews": [
+      {
+        "user": "67be5e3789479",
+        "rating": 5,
+        "comment": "Would rent again for sure.",
+        "date": "2024-11-29T00:56:04.077515Z"
+      },
+      {
+        "user": "67be5e3740986",
+        "rating": 3,
+        "comment": "Very comfortable, but could use more storage space.",
+        "date": "2024-06-06T00:56:04.077522Z"
+      }
+    ],
+    "averageRating": 4.0,
+    "slug": "camper-model-80"
+  },
+  {
+    "name": "Camper Model 81",
+    "images": [
+      "https://img.example.com/camper_80_1.jpg",
+      "https://img.example.com/camper_80_2.jpg"
+    ],
+    "category": "trailer",
+    "capacity": 2,
+    "price": 48004.35,
+    "description": "A top-quality trailer with all the essential features for your adventure.",
+    "features": ["Refrigerator", "Microwave", "LED lighting", "Smart TV"],
+    "status": "booked",
+    "reviews": [
+      {
+        "user": "67be5e3315723",
+        "rating": 5,
+        "comment": "Best camper I've ever rented!",
+        "date": "2024-03-11T00:56:04.077534Z"
+      },
+      {
+        "user": "67be5e3641864",
+        "rating": 4,
+        "comment": "A bit pricey, but totally worth it.",
+        "date": "2024-10-06T00:56:04.077538Z"
+      }
+    ],
+    "averageRating": 4.5,
+    "slug": "camper-model-81"
+  },
+  {
+    "name": "Camper Model 82",
+    "images": [
+      "https://img.example.com/camper_81_1.jpg",
+      "https://img.example.com/camper_81_2.jpg"
+    ],
+    "category": "motorhome",
+    "capacity": 6,
+    "price": 54468.54,
+    "description": "A top-quality motorhome with all the essential features for your adventure.",
+    "features": [
+      "GPS navigation",
+      "Heated seats",
+      "Backup camera",
+      "Bluetooth stereo"
+    ],
+    "status": "unavailable",
+    "reviews": [
+      {
+        "user": "67be5e3124074",
+        "rating": 4,
+        "comment": "A bit pricey, but totally worth it.",
+        "date": "2024-08-28T00:56:04.077551Z"
+      },
+      {
+        "user": "67be5e3974786",
+        "rating": 4,
+        "comment": "Would rent again for sure.",
+        "date": "2024-05-22T00:56:04.077558Z"
+      }
+    ],
+    "averageRating": 4.0,
+    "slug": "camper-model-82"
+  },
+  {
+    "name": "Camper Model 83",
+    "images": [
+      "https://img.example.com/camper_82_1.jpg",
+      "https://img.example.com/camper_82_2.jpg"
+    ],
+    "category": "van",
+    "capacity": 4,
+    "price": 20330.25,
+    "description": "A top-quality van with all the essential features for your adventure.",
+    "features": ["Refrigerator", "Microwave", "LED lighting", "Smart TV"],
+    "status": "unavailable",
+    "reviews": [
+      {
+        "user": "67be5e3974786",
+        "rating": 3,
+        "comment": "Amazing experience, highly recommend!",
+        "date": "2024-12-16T00:56:04.077576Z"
+      },
+      {
+        "user": "67be5e3888243",
+        "rating": 3,
+        "comment": "Best camper I've ever rented!",
+        "date": "2024-04-11T00:56:04.077585Z"
+      }
+    ],
+    "averageRating": 3.0,
+    "slug": "camper-model-83"
+  },
+  {
+    "name": "Camper Model 84",
+    "images": [
+      "https://img.example.com/camper_83_1.jpg",
+      "https://img.example.com/camper_83_2.jpg"
+    ],
+    "category": "van",
+    "capacity": 5,
+    "price": 31933.45,
+    "description": "A top-quality van with all the essential features for your adventure.",
+    "features": [
+      "Expandable awning",
+      "Off-road tires",
+      "Extra storage",
+      "Outdoor shower"
+    ],
+    "status": "unavailable",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-84"
+  },
+  {
+    "name": "Camper Model 85",
+    "images": [
+      "https://img.example.com/camper_84_1.jpg",
+      "https://img.example.com/camper_84_2.jpg"
+    ],
+    "category": "motorhome",
+    "capacity": 5,
+    "price": 25921.8,
+    "description": "A top-quality motorhome with all the essential features for your adventure.",
+    "features": [
+      "Solar panels",
+      "Built-in kitchen",
+      "Air conditioning",
+      "Wi-Fi"
+    ],
+    "status": "available",
+    "reviews": [
+      {
+        "user": "67be5e3770874",
+        "rating": 4,
+        "comment": "Perfect for a weekend getaway.",
+        "date": "2024-06-01T00:56:04.077601Z"
+      },
+      {
+        "user": "67be5e3832687",
+        "rating": 4,
+        "comment": "Best camper I've ever rented!",
+        "date": "2025-02-14T00:56:04.077609Z"
+      },
+      {
+        "user": "67be5e3279825",
+        "rating": 4,
+        "comment": "Very comfortable, but could use more storage space.",
+        "date": "2024-05-18T00:56:04.077614Z"
+      }
+    ],
+    "averageRating": 4.0,
+    "slug": "camper-model-85"
+  },
+  {
+    "name": "Camper Model 86",
+    "images": [
+      "https://img.example.com/camper_85_1.jpg",
+      "https://img.example.com/camper_85_2.jpg"
+    ],
+    "category": "motorhome",
+    "capacity": 6,
+    "price": 50498.45,
+    "description": "A top-quality motorhome with all the essential features for your adventure.",
+    "features": [
+      "Expandable awning",
+      "Off-road tires",
+      "Extra storage",
+      "Outdoor shower"
+    ],
+    "status": "available",
+    "reviews": [
+      {
+        "user": "67be5e3740986",
+        "rating": 5,
+        "comment": "Very comfortable, but could use more storage space.",
+        "date": "2024-04-04T00:56:04.077624Z"
+      }
+    ],
+    "averageRating": 5.0,
+    "slug": "camper-model-86"
+  },
+  {
+    "name": "Camper Model 87",
+    "images": [
+      "https://img.example.com/camper_86_1.jpg",
+      "https://img.example.com/camper_86_2.jpg"
+    ],
+    "category": "trailer",
+    "capacity": 6,
+    "price": 33325.54,
+    "description": "A top-quality trailer with all the essential features for your adventure.",
+    "features": [
+      "Expandable awning",
+      "Off-road tires",
+      "Extra storage",
+      "Outdoor shower"
+    ],
+    "status": "unavailable",
+    "reviews": [
+      {
+        "user": "67be5e3740986",
+        "rating": 5,
+        "comment": "Best camper I've ever rented!",
+        "date": "2024-03-12T00:56:04.077634Z"
+      }
+    ],
+    "averageRating": 5.0,
+    "slug": "camper-model-87"
+  },
+  {
+    "name": "Camper Model 88",
+    "images": [
+      "https://img.example.com/camper_87_1.jpg",
+      "https://img.example.com/camper_87_2.jpg"
+    ],
+    "category": "trailer",
+    "capacity": 6,
+    "price": 52357.44,
+    "description": "A top-quality trailer with all the essential features for your adventure.",
+    "features": [
+      "GPS navigation",
+      "Heated seats",
+      "Backup camera",
+      "Bluetooth stereo"
+    ],
+    "status": "available",
+    "reviews": [
+      {
+        "user": "67be5e3842205",
+        "rating": 4,
+        "comment": "Best camper I've ever rented!",
+        "date": "2024-12-22T00:56:04.077644Z"
+      },
+      {
+        "user": "67be5e3220550",
+        "rating": 5,
+        "comment": "Amazing experience, highly recommend!",
+        "date": "2024-07-02T00:56:04.077648Z"
+      },
+      {
+        "user": "67be5e3905034",
+        "rating": 4,
+        "comment": "Best camper I've ever rented!",
+        "date": "2025-02-11T00:56:04.077653Z"
+      }
+    ],
+    "averageRating": 4.3,
+    "slug": "camper-model-88"
+  },
+  {
+    "name": "Camper Model 89",
+    "images": [
+      "https://img.example.com/camper_88_1.jpg",
+      "https://img.example.com/camper_88_2.jpg"
+    ],
+    "category": "motorhome",
+    "capacity": 5,
+    "price": 37457.84,
+    "description": "A top-quality motorhome with all the essential features for your adventure.",
+    "features": [
+      "All-wheel drive",
+      "Rooftop tent",
+      "Cargo roof rack",
+      "Satellite radio"
+    ],
+    "status": "booked",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-89"
+  },
+  {
+    "name": "Camper Model 90",
+    "images": [
+      "https://img.example.com/camper_89_1.jpg",
+      "https://img.example.com/camper_89_2.jpg"
+    ],
+    "category": "off-road",
+    "capacity": 6,
+    "price": 51693.45,
+    "description": "A top-quality off-road with all the essential features for your adventure.",
+    "features": ["Refrigerator", "Microwave", "LED lighting", "Smart TV"],
+    "status": "booked",
+    "reviews": [
+      {
+        "user": "67be5e3220550",
+        "rating": 3,
+        "comment": "Spacious and well-equipped.",
+        "date": "2024-10-26T00:56:04.077676Z"
+      },
+      {
+        "user": "67be5e3447176",
+        "rating": 5,
+        "comment": "Amazing experience, highly recommend!",
+        "date": "2024-08-02T00:56:04.077683Z"
+      },
+      {
+        "user": "67be5e3832687",
+        "rating": 5,
+        "comment": "Best camper I've ever rented!",
+        "date": "2024-09-08T00:56:04.077691Z"
+      }
+    ],
+    "averageRating": 4.3,
+    "slug": "camper-model-90"
+  },
+  {
+    "name": "Camper Model 91",
+    "images": [
+      "https://img.example.com/camper_90_1.jpg",
+      "https://img.example.com/camper_90_2.jpg"
+    ],
+    "category": "motorhome",
+    "capacity": 5,
+    "price": 39164.14,
+    "description": "A top-quality motorhome with all the essential features for your adventure.",
+    "features": ["Refrigerator", "Microwave", "LED lighting", "Smart TV"],
+    "status": "available",
+    "reviews": [
+      {
+        "user": "67be5e3533256",
+        "rating": 5,
+        "comment": "Would rent again for sure.",
+        "date": "2025-01-22T00:56:04.077748Z"
+      }
+    ],
+    "averageRating": 5.0,
+    "slug": "camper-model-91"
+  },
+  {
+    "name": "Camper Model 92",
+    "images": [
+      "https://img.example.com/camper_91_1.jpg",
+      "https://img.example.com/camper_91_2.jpg"
+    ],
+    "category": "off-road",
+    "capacity": 2,
+    "price": 40343.73,
+    "description": "A top-quality off-road with all the essential features for your adventure.",
+    "features": ["Refrigerator", "Microwave", "LED lighting", "Smart TV"],
+    "status": "unavailable",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-92"
+  },
+  {
+    "name": "Camper Model 93",
+    "images": [
+      "https://img.example.com/camper_92_1.jpg",
+      "https://img.example.com/camper_92_2.jpg"
+    ],
+    "category": "van",
+    "capacity": 2,
+    "price": 40800.93,
+    "description": "A top-quality van with all the essential features for your adventure.",
+    "features": ["Refrigerator", "Microwave", "LED lighting", "Smart TV"],
+    "status": "unavailable",
+    "reviews": [
+      {
+        "user": "67be5e3475643",
+        "rating": 4,
+        "comment": "Best camper I've ever rented!",
+        "date": "2024-03-04T00:56:04.077773Z"
+      },
+      {
+        "user": "67be5e3749773",
+        "rating": 5,
+        "comment": "Would rent again for sure.",
+        "date": "2025-01-13T00:56:04.077789Z"
+      }
+    ],
+    "averageRating": 4.5,
+    "slug": "camper-model-93"
+  },
+  {
+    "name": "Camper Model 94",
+    "images": [
+      "https://img.example.com/camper_93_1.jpg",
+      "https://img.example.com/camper_93_2.jpg"
+    ],
+    "category": "trailer",
+    "capacity": 6,
+    "price": 54978.71,
+    "description": "A top-quality trailer with all the essential features for your adventure.",
+    "features": [
+      "Expandable awning",
+      "Off-road tires",
+      "Extra storage",
+      "Outdoor shower"
+    ],
+    "status": "unavailable",
+    "reviews": [
+      {
+        "user": "67be5e3842205",
+        "rating": 5,
+        "comment": "Best camper I've ever rented!",
+        "date": "2024-12-17T00:56:04.077800Z"
+      },
+      {
+        "user": "67be5e3949353",
+        "rating": 4,
+        "comment": "Would rent again for sure.",
+        "date": "2025-01-23T00:56:04.077805Z"
+      },
+      {
+        "user": "67be5e3482339",
+        "rating": 5,
+        "comment": "Would rent again for sure.",
+        "date": "2024-07-24T00:56:04.077810Z"
+      }
+    ],
+    "averageRating": 4.7,
+    "slug": "camper-model-94"
+  },
+  {
+    "name": "Camper Model 95",
+    "images": [
+      "https://img.example.com/camper_94_1.jpg",
+      "https://img.example.com/camper_94_2.jpg"
+    ],
+    "category": "van",
+    "capacity": 5,
+    "price": 44655.23,
+    "description": "A top-quality van with all the essential features for your adventure.",
+    "features": [
+      "Solar panels",
+      "Built-in kitchen",
+      "Air conditioning",
+      "Wi-Fi"
+    ],
+    "status": "unavailable",
+    "reviews": [
+      {
+        "user": "67be5e3568883",
+        "rating": 5,
+        "comment": "Amazing experience, highly recommend!",
+        "date": "2024-11-10T00:56:04.077822Z"
+      },
+      {
+        "user": "67be5e3220550",
+        "rating": 4,
+        "comment": "Amazing experience, highly recommend!",
+        "date": "2024-03-15T00:56:04.077830Z"
+      },
+      {
+        "user": "67be5e3749773",
+        "rating": 3,
+        "comment": "Spacious and well-equipped.",
+        "date": "2024-08-28T00:56:04.077837Z"
+      }
+    ],
+    "averageRating": 4.0,
+    "slug": "camper-model-95"
+  },
+  {
+    "name": "Camper Model 96",
+    "images": [
+      "https://img.example.com/camper_95_1.jpg",
+      "https://img.example.com/camper_95_2.jpg"
+    ],
+    "category": "caravan",
+    "capacity": 2,
+    "price": 26238.73,
+    "description": "A top-quality caravan with all the essential features for your adventure.",
+    "features": [
+      "Solar panels",
+      "Built-in kitchen",
+      "Air conditioning",
+      "Wi-Fi"
+    ],
+    "status": "booked",
+    "reviews": [
+      {
+        "user": "67be5e3533256",
+        "rating": 3,
+        "comment": "Amazing experience, highly recommend!",
+        "date": "2024-05-01T00:56:04.077854Z"
+      }
+    ],
+    "averageRating": 3.0,
+    "slug": "camper-model-96"
+  },
+  {
+    "name": "Camper Model 97",
+    "images": [
+      "https://img.example.com/camper_96_1.jpg",
+      "https://img.example.com/camper_96_2.jpg"
+    ],
+    "category": "off-road",
+    "capacity": 5,
+    "price": 21435.92,
+    "description": "A top-quality off-road with all the essential features for your adventure.",
+    "features": [
+      "GPS navigation",
+      "Heated seats",
+      "Backup camera",
+      "Bluetooth stereo"
+    ],
+    "status": "booked",
+    "reviews": [
+      {
+        "user": "67be5e3568883",
+        "rating": 4,
+        "comment": "Spacious and well-equipped.",
+        "date": "2025-01-20T00:56:04.077866Z"
+      }
+    ],
+    "averageRating": 4.0,
+    "slug": "camper-model-97"
+  },
+  {
+    "name": "Camper Model 98",
+    "images": [
+      "https://img.example.com/camper_97_1.jpg",
+      "https://img.example.com/camper_97_2.jpg"
+    ],
+    "category": "off-road",
+    "capacity": 5,
+    "price": 44494.2,
+    "description": "A top-quality off-road with all the essential features for your adventure.",
+    "features": [
+      "GPS navigation",
+      "Heated seats",
+      "Backup camera",
+      "Bluetooth stereo"
+    ],
+    "status": "unavailable",
+    "reviews": [
+      {
+        "user": "67be5e3124074",
+        "rating": 4,
+        "comment": "Best camper I've ever rented!",
+        "date": "2024-07-17T00:56:04.077876Z"
+      },
+      {
+        "user": "67be5e3669950",
+        "rating": 5,
+        "comment": "A bit pricey, but totally worth it.",
+        "date": "2024-09-02T00:56:04.077881Z"
+      }
+    ],
+    "averageRating": 4.5,
+    "slug": "camper-model-98"
+  },
+  {
+    "name": "Camper Model 99",
+    "images": [
+      "https://img.example.com/camper_98_1.jpg",
+      "https://img.example.com/camper_98_2.jpg"
+    ],
+    "category": "off-road",
+    "capacity": 3,
+    "price": 25610.59,
+    "description": "A top-quality off-road with all the essential features for your adventure.",
+    "features": [
+      "Expandable awning",
+      "Off-road tires",
+      "Extra storage",
+      "Outdoor shower"
+    ],
+    "status": "unavailable",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-99"
+  },
+  {
+    "name": "Camper Model 100",
+    "images": [
+      "https://img.example.com/camper_99_1.jpg",
+      "https://img.example.com/camper_99_2.jpg"
+    ],
+    "category": "trailer",
+    "capacity": 3,
+    "price": 41549.11,
+    "description": "A top-quality trailer with all the essential features for your adventure.",
+    "features": ["Refrigerator", "Microwave", "LED lighting", "Smart TV"],
+    "status": "available",
+    "reviews": [],
+    "averageRating": 0,
+    "slug": "camper-model-100"
+  }
+]
