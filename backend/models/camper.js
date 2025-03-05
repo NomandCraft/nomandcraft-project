@@ -24,7 +24,7 @@ const CamperSchema = new mongoose.Schema(
       enum: ["van", "motorhome", "trailer", "caravan", "off-road"],
       default: "van",
     },
-    capacity: {
+    sleepingCapacity: {
       type: Number,
       min: [0, "The capacity cannot be negative"],
       required: true,
@@ -35,44 +35,48 @@ const CamperSchema = new mongoose.Schema(
       required: true,
       min: [0, "The price cannot be negative"],
     },
+    isCustomizable: {
+      type: Boolean,
+      default: false,
+    },
+    productionTime: {
+      type: Number,
+      default: 0,
+    },
+    customFeatures: [
+      {
+        featureName: String,
+        featurePrice: Number,
+      },
+    ],
+
     description: { type: String, required: true, maxlength: 500 },
     features: [{ type: String, required: true, trim: true }],
     slug: { type: String, unique: true },
     status: {
       type: String,
-      enum: ["available", "booked", "unavailable"],
-      default: "available",
+      enum: ["forSale", "sold", "inProduction", "reserved"],
+      default: "forSale",
     },
     reviews: [
       {
         user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-        rating: { type: Number, min: 1, max: 5 },
         comment: String,
         date: { type: Date, default: Date.now },
       },
     ],
-    averageRating: { type: Number, default: 0 },
   },
   { timestamps: true },
 );
 
 /**
  * Pre-save middleware for CamperSchema.
- * - Calculates the average rating based on reviews.
  * - Generates a slug for the camper name if it's new or modified.
  */
 CamperSchema.pre("save", function (next) {
-  if (this.reviews.length > 0) {
-    const total = this.reviews.reduce((sum, review) => sum + review.rating, 0);
-    this.averageRating = total / this.reviews.length;
-  } else {
-    this.averageRating = 0;
-  }
-
   if (!this.slug || this.isModified("name")) {
     this.slug = slugify(this.name, { lower: true, strict: true });
   }
-
   next();
 });
 

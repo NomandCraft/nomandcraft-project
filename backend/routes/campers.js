@@ -81,7 +81,7 @@ router.delete("/:id", async (req, res) => {
 // Add or update a review for a camper (POST /api/campers/:id/review)
 router.post("/:id/review", async (req, res) => {
   try {
-    const { userId, rating, comment } = req.body;
+    const { userId, comment } = req.body;
 
     if (!userId) {
       return res.status(400).json({ error: "User ID is required" });
@@ -110,23 +110,16 @@ router.post("/:id/review", async (req, res) => {
 
     if (existingReview) {
       // If the review is already there, we update it
-      existingReview.rating = rating;
       existingReview.comment = comment;
       existingReview.date = new Date();
     } else {
       // If there is no review, add a new one
       camper.reviews.push({
         user: mongoose.Types.ObjectId.createFromHexString(userId),
-        rating,
         comment,
         date: new Date(),
       });
     }
-
-    // Recall the average rating
-    camper.averageRating =
-      camper.reviews.reduce((sum, rev) => sum + rev.rating, 0) /
-      camper.reviews.length;
 
     await camper.save();
     res.status(201).json(camper);
