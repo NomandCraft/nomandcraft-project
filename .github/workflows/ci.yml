@@ -9,6 +9,8 @@ on:
 jobs:
   build_and_test:
     runs-on: ubuntu-latest
+    env:  # <- Исправлен отступ
+      MONGODB_URI: ${{ secrets.MONGODB_URI }}
 
     steps:
       - name: Check out code
@@ -19,7 +21,6 @@ jobs:
         with:
           node-version: "22.x"
           cache: "npm"
-          # Path to lock files (fix)
           cache-dependency-path: |
             backend/package-lock.json
             frontend/package-lock.json
@@ -43,6 +44,7 @@ jobs:
       - name: Lint frontend
         run: npm run lint
         working-directory: ./frontend
-#    - name: Run frontend tests
-#       run: npm test
-#       working-directory: ./frontend
+
+#      - name: Run frontend tests
+#        run: npm test
+#        working-directory: ./frontend
