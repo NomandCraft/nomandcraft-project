@@ -4,14 +4,14 @@ import catchAsync from '../utils/catchAsync.js';
 export const createCamper = catchAsync(async (req, res, next) => {
   try {
     const camper = new Camper(req.body);
-    await camper.validate(); // Проверяем данные перед сохранением
+    await camper.validate(); // Проверяем перед сохранением
     await camper.save();
     res.status(201).json(camper);
   } catch (error) {
     if (error.name === 'ValidationError') {
-      return res.status(400).json({ error: error.message }); // Возвращаем корректный JSON
+      return res.status(400).json({ error: error.message }); // Явная ошибка валидации
     }
-    next(error); // Передаём ошибку в errorHandler
+    next(error); // Передаём в errorHandler
   }
 });
 

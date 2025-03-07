@@ -7,7 +7,9 @@ describe('Campers API Integration Tests', () => {
   afterAll(async () => {
     await mongoose.connection.close();
     if (server && server.close) {
-      await new Promise((resolve) => server.close(resolve));
+      await new Promise((resolve, reject) => {
+        server.close((err) => (err ? reject(err) : resolve()));
+      });
     }
   });
 
