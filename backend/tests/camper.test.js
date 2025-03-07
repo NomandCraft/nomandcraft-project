@@ -25,10 +25,8 @@ describe('Campers API Integration Tests', () => {
       features: [],
     };
 
-    const res = await request(app)
-      .post('/api/campers')
-      .send(invalidCamperData)
-      .expect(400);
+    const res = await request(app).post('/api/campers').send(invalidCamperData);
+    expect(res.status).toBe(400);
 
     expect(res.body).toHaveProperty('error');
   });

@@ -1,3 +1,8 @@
+import eslintJs from '@eslint/js';
+import vue from 'eslint-plugin-vue';
+import prettierPlugin from 'eslint-plugin-prettier';
+import prettierConfig from 'eslint-config-prettier';
+
 export default [
   {
     files: ['**/*.{js,mjs,cjs,vue}'],
@@ -7,15 +12,18 @@ export default [
       globals: {
         node: true,
         browser: true,
+        process: 'readonly',
+        console: 'readonly',
       },
     },
     plugins: {
-      vue: require('eslint-plugin-vue'),
-      prettier: require('eslint-plugin-prettier'),
+      vue,
+      prettier: prettierPlugin,
     },
     rules: {
-      ...require('@eslint/js').configs.recommended.rules,
-      ...require('eslint-plugin-vue').configs.recommended.rules,
+      ...eslintJs.configs.recommended.rules,
+      ...vue.configs.recommended.rules,
+      ...prettierConfig.rules,
       'prettier/prettier': 'error',
     },
     ignores: ['node_modules/', 'dist/', 'build/', '.env', 'public/'],
@@ -24,7 +32,11 @@ export default [
     files: ['tests/**/*.test.js'],
     languageOptions: {
       globals: {
-        jest: true,
+        jest: 'readonly',
+        describe: 'readonly',
+        test: 'readonly',
+        expect: 'readonly',
+        afterAll: 'readonly',
       },
     },
   },

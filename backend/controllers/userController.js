@@ -17,14 +17,12 @@ export const registerUser = catchAsync(async (req, res) => {
     password: hashedPassword,
     role,
   });
-  res
-    .status(201)
-    .json({
-      id: user._id,
-      name: user.name,
-      email: user.email,
-      role: user.role,
-    });
+  res.status(201).json({
+    id: user._id,
+    name: user.name,
+    email: user.email,
+    role: user.role,
+  });
 });
 
 export const getAllUsers = catchAsync(async (req, res) => {

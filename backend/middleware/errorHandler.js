@@ -1,4 +1,4 @@
-export default (err, req, res, next) => {
+export default (err, req, res) => {
   let statusCode = err.statusCode || 500;
   let message = err.message || 'Internal Server Error';
 
