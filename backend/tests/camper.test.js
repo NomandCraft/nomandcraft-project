@@ -6,7 +6,9 @@ import server from '../server.js';
 describe('Campers API Integration Tests', () => {
   afterAll(async () => {
     await mongoose.connection.close();
-    server.close();
+    if (server && server.close) {
+      await new Promise((resolve) => server.close(resolve));
+    }
   });
 
   test('GET /api/campers returns array of campers', async () => {
