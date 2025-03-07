@@ -1,29 +1,21 @@
-const js = require('@eslint/js');
-const vue = require('eslint-plugin-vue');
-const prettierPlugin = require('eslint-plugin-prettier');
-const prettierConfig = require('eslint-config-prettier');
-const globals = require('globals');
-
-/** @type {import('eslint').Linter.FlatConfig[]} */
-module.exports = [
+export default [
   {
     files: ['**/*.{js,mjs,cjs,vue}'],
     languageOptions: {
-      sourceType: 'commonjs',
+      sourceType: 'module',
       ecmaVersion: 'latest',
       globals: {
-        ...globals.node,
-        ...globals.browser,
+        node: true,
+        browser: true,
       },
     },
     plugins: {
-      vue,
-      prettier: prettierPlugin,
+      vue: require('eslint-plugin-vue'),
+      prettier: require('eslint-plugin-prettier'),
     },
     rules: {
-      ...js.configs.recommended.rules,
-      ...vue.configs.recommended.rules,
-      ...prettierConfig.rules,
+      ...require('@eslint/js').configs.recommended.rules,
+      ...require('eslint-plugin-vue').configs.recommended.rules,
       'prettier/prettier': 'error',
     },
     ignores: ['node_modules/', 'dist/', 'build/', '.env', 'public/'],
@@ -32,7 +24,7 @@ module.exports = [
     files: ['tests/**/*.test.js'],
     languageOptions: {
       globals: {
-        ...globals.jest,
+        jest: true,
       },
     },
   },

@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const slugify = require('slugify');
+import mongoose from 'mongoose';
+import slugify from 'slugify';
 
 const CategorySchema = new mongoose.Schema({
   name: { type: String, required: true },
@@ -9,11 +9,11 @@ const CategorySchema = new mongoose.Schema({
 
 CategorySchema.pre('save', function (next) {
   if (this.isModified('name')) {
-    this.slug = slugify(this.name, { lower: true });
+    this.slug = slugify(this.name, { lower: true, strict: true });
   }
   next();
 });
 
-const Category = mongoose.model('Category', CategorySchema);
+export default mongoose.model('Category', CategorySchema);
 
-module.exports = Category;
+// export default mongoose.model('Category', CategorySchema);

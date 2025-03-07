@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
-const slugify = require('slugify');
-/* const User = require("./user"); */
+import mongoose from 'mongoose';
+import slugify from 'slugify';
+
 const CamperSchema = new mongoose.Schema(
   {
     name: {
@@ -26,30 +26,17 @@ const CamperSchema = new mongoose.Schema(
     },
     sleepingCapacity: {
       type: Number,
-      min: [0, 'The capacity cannot be negative'],
       required: true,
+      min: [0, 'Capacity cannot be negative'],
     },
-
     price: {
       type: Number,
       required: true,
-      min: [0, 'The price cannot be negative'],
+      min: [0, 'Price cannot be negative'],
     },
-    isCustomizable: {
-      type: Boolean,
-      default: false,
-    },
-    productionTime: {
-      type: Number,
-      default: 0,
-    },
-    customFeatures: [
-      {
-        featureName: String,
-        featurePrice: Number,
-      },
-    ],
-
+    isCustomizable: { type: Boolean, default: false },
+    productionTime: { type: Number, default: 0 },
+    customFeatures: [{ featureName: String, featurePrice: Number }],
     description: { type: String, required: true, maxlength: 500 },
     features: [{ type: String, required: true, trim: true }],
     slug: { type: String, unique: true },
@@ -69,10 +56,6 @@ const CamperSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-/**
- * Pre-save middleware for CamperSchema.
- * - Generates a slug for the camper name if it's new or modified.
- */
 CamperSchema.pre('save', function (next) {
   if (!this.slug || this.isModified('name')) {
     this.slug = slugify(this.name, { lower: true, strict: true });
@@ -84,14 +67,8 @@ CamperSchema.virtual('formattedPrice').get(function () {
   return `$${this.price.toFixed(2)}`;
 });
 
-CamperSchema.index({ price: 1 });
-/**
- * Find all campers by category
- * @param {String} category - The category of campers to find
- * @returns {Promise<Documents[]>} - A promise that resolves with an array of documents
- */
 CamperSchema.statics.findByCategory = function (category) {
   return this.find({ category });
 };
 
-module.exports = mongoose.model('Camper', CamperSchema);
+export default mongoose.model('Camper', CamperSchema);
