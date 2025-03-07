@@ -1,5 +1,5 @@
 import Camper from '../models/Camper.js';
-import { catchAsync } from '../utils/catchAsync.js';
+import catchAsync from '../utils/catchAsync.js';
 
 export const createCamper = catchAsync(async (req, res, next) => {
   try {
