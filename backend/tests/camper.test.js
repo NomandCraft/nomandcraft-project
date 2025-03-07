@@ -6,9 +6,18 @@ import server from '../server.js';
 describe('Campers API Integration Tests', () => {
   afterAll(async () => {
     await mongoose.connection.close();
+
     if (server && server.close) {
       await new Promise((resolve, reject) => {
-        server.close((err) => (err ? reject(err) : resolve()));
+        server.close((err) => {
+          if (err) {
+            console.error('❌ Error closing server:', err);
+            reject(err);
+          } else {
+            console.log('✅ Server closed');
+            resolve();
+          }
+        });
       });
     }
   });
