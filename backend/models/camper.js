@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const slugify = require("slugify");
+const mongoose = require('mongoose');
+const slugify = require('slugify');
 /* const User = require("./user"); */
 const CamperSchema = new mongoose.Schema(
   {
@@ -15,25 +15,25 @@ const CamperSchema = new mongoose.Schema(
         type: String,
         match: [
           /^https?:\/\/.+\.(jpg|jpeg|png|gif)(\?.*)?$/i,
-          "Incorrect URL images",
+          'Incorrect URL images',
         ],
       },
     ],
     category: {
       type: String,
-      enum: ["van", "motorhome", "trailer", "caravan", "off-road"],
-      default: "van",
+      enum: ['van', 'motorhome', 'trailer', 'caravan', 'off-road'],
+      default: 'van',
     },
     sleepingCapacity: {
       type: Number,
-      min: [0, "The capacity cannot be negative"],
+      min: [0, 'The capacity cannot be negative'],
       required: true,
     },
 
     price: {
       type: Number,
       required: true,
-      min: [0, "The price cannot be negative"],
+      min: [0, 'The price cannot be negative'],
     },
     isCustomizable: {
       type: Boolean,
@@ -55,32 +55,32 @@ const CamperSchema = new mongoose.Schema(
     slug: { type: String, unique: true },
     status: {
       type: String,
-      enum: ["forSale", "sold", "inProduction", "reserved"],
-      default: "forSale",
+      enum: ['forSale', 'sold', 'inProduction', 'reserved'],
+      default: 'forSale',
     },
     reviews: [
       {
-        user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+        user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
         comment: String,
         date: { type: Date, default: Date.now },
       },
     ],
   },
-  { timestamps: true },
+  { timestamps: true }
 );
 
 /**
  * Pre-save middleware for CamperSchema.
  * - Generates a slug for the camper name if it's new or modified.
  */
-CamperSchema.pre("save", function (next) {
-  if (!this.slug || this.isModified("name")) {
+CamperSchema.pre('save', function (next) {
+  if (!this.slug || this.isModified('name')) {
     this.slug = slugify(this.name, { lower: true, strict: true });
   }
   next();
 });
 
-CamperSchema.virtual("formattedPrice").get(function () {
+CamperSchema.virtual('formattedPrice').get(function () {
   return `$${this.price.toFixed(2)}`;
 });
 
@@ -94,4 +94,4 @@ CamperSchema.statics.findByCategory = function (category) {
   return this.find({ category });
 };
 
-module.exports = mongoose.model("Camper", CamperSchema);
+module.exports = mongoose.model('Camper', CamperSchema);

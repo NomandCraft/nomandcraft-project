@@ -1,11 +1,11 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const Camper = require("../models/camper");
-const User = require("../models/user");
-const mongoose = require("mongoose");
+const Camper = require('../models/camper');
+const User = require('../models/user');
+const mongoose = require('mongoose');
 
 //  Create a camper (POST /api/campers)
-router.post("/", async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const camper = new Camper(req.body);
     await camper.save();
@@ -16,9 +16,9 @@ router.post("/", async (req, res) => {
 });
 
 //  Get all campers (GET /api/campers)
-router.get("/", async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const campers = await Camper.find().populate("reviews.user", "name");
+    const campers = await Camper.find().populate('reviews.user', 'name');
     res.json(campers);
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -26,17 +26,17 @@ router.get("/", async (req, res) => {
 });
 
 //  Get single camper by ID (GET /api/campers/:id)
-router.get("/:id", async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-      return res.status(400).json({ error: "Invalid camper ID" });
+      return res.status(400).json({ error: 'Invalid camper ID' });
     }
 
     const camper = await Camper.findById(req.params.id).populate(
-      "reviews.user",
-      "name",
+      'reviews.user',
+      'name'
     );
-    if (!camper) return res.status(404).json({ error: "Camper not found" });
+    if (!camper) return res.status(404).json({ error: 'Camper not found' });
 
     res.json(camper);
   } catch (error) {
@@ -45,16 +45,16 @@ router.get("/:id", async (req, res) => {
 });
 
 //  Update a camper (PUT /api/campers/:id)
-router.put("/:id", async (req, res) => {
+router.put('/:id', async (req, res) => {
   try {
     if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-      return res.status(400).json({ error: "Invalid camper ID" });
+      return res.status(400).json({ error: 'Invalid camper ID' });
     }
 
     const camper = await Camper.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
     });
-    if (!camper) return res.status(404).json({ error: "Camper not found" });
+    if (!camper) return res.status(404).json({ error: 'Camper not found' });
 
     res.json(camper);
   } catch (error) {
@@ -63,14 +63,14 @@ router.put("/:id", async (req, res) => {
 });
 
 //  Delete a camper (DELETE /api/campers/:id)
-router.delete("/:id", async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-      return res.status(400).json({ error: "Invalid camper ID" });
+      return res.status(400).json({ error: 'Invalid camper ID' });
     }
 
     const camper = await Camper.findByIdAndDelete(req.params.id);
-    if (!camper) return res.status(404).json({ error: "Camper not found" });
+    if (!camper) return res.status(404).json({ error: 'Camper not found' });
 
     res.status(204).send();
   } catch (error) {
@@ -79,33 +79,33 @@ router.delete("/:id", async (req, res) => {
 });
 
 // Add or update a review for a camper (POST /api/campers/:id/review)
-router.post("/:id/review", async (req, res) => {
+router.post('/:id/review', async (req, res) => {
   try {
     const { userId, comment } = req.body;
 
     if (!userId) {
-      return res.status(400).json({ error: "User ID is required" });
+      return res.status(400).json({ error: 'User ID is required' });
     }
 
     // Check the validity of IDs
     if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-      return res.status(400).json({ error: "Invalid camper ID" });
+      return res.status(400).json({ error: 'Invalid camper ID' });
     }
     if (!mongoose.Types.ObjectId.isValid(userId)) {
-      return res.status(400).json({ error: "Invalid user ID" });
+      return res.status(400).json({ error: 'Invalid user ID' });
     }
 
     // We find a camper
     const camper = await Camper.findById(req.params.id);
-    if (!camper) return res.status(404).json({ error: "Camper not found" });
+    if (!camper) return res.status(404).json({ error: 'Camper not found' });
 
     // We find the user
     const user = await User.findById(userId);
-    if (!user) return res.status(400).json({ error: "User not found" });
+    if (!user) return res.status(400).json({ error: 'User not found' });
 
     // Check if the user left a review
     const existingReview = camper.reviews.find(
-      (rev) => rev.user && rev.user.toString() === userId.toString(),
+      (rev) => rev.user && rev.user.toString() === userId.toString()
     );
 
     if (existingReview) {

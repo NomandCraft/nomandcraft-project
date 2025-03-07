@@ -83,7 +83,7 @@ router.put('/:id', async (req, res) => {
 
 // DELETE /api/categories/:id – delete the category
 
-router.delete('/', async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const { id } = req.params;
 

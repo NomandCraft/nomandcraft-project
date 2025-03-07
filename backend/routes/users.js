@@ -1,10 +1,10 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const User = require("../models/user");
-const bcrypt = require("bcryptjs");
+const User = require('../models/user');
+const bcrypt = require('bcryptjs');
 
 // User registrations)
-router.post("/", async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const { name, email, password, role } = req.body;
 
@@ -13,7 +13,7 @@ router.post("/", async (req, res) => {
     if (existingUser) {
       return res
         .status(400)
-        .json({ error: "User with this email already exists" });
+        .json({ error: 'User with this email already exists' });
     }
     const hashedPassword = await bcrypt.hash(password, 10);
 
@@ -33,9 +33,9 @@ router.post("/", async (req, res) => {
 });
 
 // Get all users
-router.get("/", async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const users = await User.find().select("-password");
+    const users = await User.find().select('-password');
     res.json(users);
   } catch (error) {
     res.status(500).json({ error: error.message });

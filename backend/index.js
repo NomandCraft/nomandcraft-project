@@ -1,38 +1,38 @@
-require("dotenv").config();
-const express = require("express");
-const cors = require("cors");
+require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
 /* const mongoose = require("mongoose"); */
-const morgan = require("morgan");
+const morgan = require('morgan');
 
 const app = express();
 app.use(express.json());
-app.use(morgan("dev"));
+app.use(morgan('dev'));
 app.use(cors());
 
 // Connect to MongoDB
-const connectDB = require("./db");
+const connectDB = require('./db');
 connectDB();
 
 // Connect models
-require("./models/user");
-require("./models/camper");
+require('./models/user');
+require('./models/camper');
 
 // Connect routes
-const camperRoutes = require("./routes/campers");
-app.use("/api/campers", camperRoutes);
+const camperRoutes = require('./routes/campers');
+app.use('/api/campers', camperRoutes);
 
-const userRoutes = require("./routes/users");
-app.use("/api/users", userRoutes);
+const userRoutes = require('./routes/users');
+app.use('/api/users', userRoutes);
 
 //  Health Check Route
-app.get("/health", (req, res) => {
-  res.json({ status: "ok" });
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok' });
 });
 
 //middleware for centralized error handling.
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).json({ error: err.message || "Internal Server Error" });
+  res.status(500).json({ error: err.message || 'Internal Server Error' });
   next(err);
 });
 
