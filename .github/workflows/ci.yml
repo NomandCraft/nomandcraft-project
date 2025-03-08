@@ -18,6 +18,9 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v3
+      
+      - name: Wait for MongoDB Atlas to update
+        run: sleep 30
 
       - name: Get GitHub Actions Runner Public IP
         id: get_ip
