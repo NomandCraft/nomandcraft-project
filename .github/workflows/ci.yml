@@ -16,6 +16,11 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v3
 
+      - name: Get public IP
+        run: |
+          echo "GitHub Actions Runner Public IP:"
+          curl ifconfig.me
+
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
@@ -48,3 +53,4 @@ jobs:
 #      - name: Run frontend tests
 #        run: npm test
 #        working-directory: ./frontend
+
