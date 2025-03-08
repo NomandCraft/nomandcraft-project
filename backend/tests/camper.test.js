@@ -3,25 +3,23 @@ import mongoose from 'mongoose';
 import app from '../app.js';
 import server from '../server.js';
 
-describe('Campers API Integration Tests', () => {
-  afterAll(async () => {
-    await mongoose.connection.close();
+beforeAll(async () => {
+  if (mongoose.connection.readyState === 0) {
+    await mongoose.connect(process.env.MONGODB_URI);
+  }
+});
 
+afterAll((done) => {
+  mongoose.connection.close().then(() => {
     if (server && server.close) {
-      await new Promise((resolve, reject) => {
-        server.close((err) => {
-          if (err) {
-            console.error('❌ Error closing server:', err);
-            reject(err);
-          } else {
-            console.log('✅ Server closed');
-            resolve();
-          }
-        });
-      });
+      server.close(done);
+    } else {
+      done();
     }
   });
+});
 
+describe('Campers API Integration Tests', () => {
   test('GET /api/campers returns array of campers', async () => {
     const res = await request(app).get('/api/campers');
     expect(res.statusCode).toBe(200);
@@ -40,7 +38,6 @@ describe('Campers API Integration Tests', () => {
 
     const res = await request(app).post('/api/campers').send(invalidCamperData);
     expect(res.status).toBe(400);
-
     expect(res.body).toHaveProperty('error');
   });
 
