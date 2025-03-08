@@ -32,12 +32,12 @@ export default [
     files: ['tests/**/*.test.js'],
     languageOptions: {
       globals: {
-        jest: 'true',
+        jest: 'readonly',
         describe: 'readonly',
         test: 'readonly',
-        expect: 'readonly',
         afterAll: 'readonly',
         beforeAll: 'readonly',
+        expect: 'readonly',
       },
     },
   },

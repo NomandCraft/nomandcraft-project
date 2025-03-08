@@ -3,6 +3,8 @@ import mongoose from 'mongoose';
 import app from '../app.js';
 import server from '../server.js';
 
+jest.setTimeout(30000);
+
 beforeAll(async () => {
   if (mongoose.connection.readyState === 0) {
     await mongoose.connect(process.env.MONGODB_URI);

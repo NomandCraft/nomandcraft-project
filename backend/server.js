@@ -7,4 +7,4 @@ const server = app.listen(PORT, () => {
   console.log(`🚀 Server started on port ${PORT}`);
 });
 
-export default server; // Добавь этот экспорт
+export default server;
