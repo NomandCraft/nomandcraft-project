@@ -11,15 +11,29 @@ jobs:
     runs-on: ubuntu-latest
     env:  
       MONGODB_URI: ${{ secrets.MONGODB_URI }}
+      MONGODB_PUBLIC_KEY: ${{ secrets.MONGODB_PUBLIC_KEY }}
+      MONGODB_PRIVATE_KEY: ${{ secrets.MONGODB_PRIVATE_KEY }}
+      MONGODB_PROJECT_ID: ${{ secrets.MONGODB_PROJECT_ID }}
 
     steps:
       - name: Check out code
         uses: actions/checkout@v3
 
-      - name: Get public IP
+      - name: Get GitHub Actions Runner Public IP
+        id: get_ip
         run: |
-          echo "GitHub Actions Runner Public IP:"
-          curl ifconfig.me
+          echo "Fetching Public IP..."
+          PUBLIC_IP=$(curl -s ifconfig.me)
+          echo "Public IP: $PUBLIC_IP"
+          echo "IP=$PUBLIC_IP" >> $GITHUB_ENV
+
+      - name: Add Public IP to MongoDB Atlas
+        run: |
+          echo "Adding IP to MongoDB Atlas..."
+          curl -X POST "https://cloud.mongodb.com/api/atlas/v1.0/groups/${{ secrets.MONGODB_PROJECT_ID }}/accessList" \
+            -u "${{ secrets.MONGODB_PUBLIC_KEY }}:${{ secrets.MONGODB_PRIVATE_KEY }}" \
+            -H "Content-Type: application/json" \
+            --data-raw "{ \"ipAddress\": \"${IP}\", \"comment\": \"GitHub Actions Runner\" }"
 
       - name: Use Node.js
         uses: actions/setup-node@v3
@@ -53,4 +67,5 @@ jobs:
 #      - name: Run frontend tests
 #        run: npm test
 #        working-directory: ./frontend
+
 
