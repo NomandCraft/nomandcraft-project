@@ -27,18 +27,23 @@ jobs:
           echo "Public IP: $PUBLIC_IP"
           echo "PUBLIC_IP=$PUBLIC_IP" >> $GITHUB_ENV
 
+      - name: Debug GitHub Actions IP
+        run: echo "🔍 GitHub Actions Public IP: $PUBLIC_IP"
+
       - name: Add Public IP to MongoDB Atlas
         run: |
-          echo "Adding IP to MongoDB Atlas..."
+          echo "🚀 Adding IP to MongoDB Atlas..."
           curl -X POST "https://cloud.mongodb.com/api/atlas/v1.0/groups/${{ secrets.MONGODB_PROJECT_ID }}/accessList" \
             -u "${{ secrets.MONGODB_PUBLIC_KEY }}:${{ secrets.MONGODB_PRIVATE_KEY }}" \
             -H "Content-Type: application/json" \
             --data-raw "{ \"ipAddress\": \"${{ env.PUBLIC_IP }}\", \"comment\": \"GitHub Actions Runner\" }"
 
-      # Устанавливаем trap для удаления IP, даже если тесты упадут
+      - name: Wait for MongoDB Atlas to update
+        run: sleep 60
+
       - name: Set up IP removal trap
         run: |
-          trap 'echo "Removing IP from MongoDB Atlas...";
+          trap 'echo "🧹 Removing IP from MongoDB Atlas...";
                 curl -X DELETE "https://cloud.mongodb.com/api/atlas/v1.0/groups/${{ secrets.MONGODB_PROJECT_ID }}/accessList/${{ env.PUBLIC_IP }}" \
                 -u "${{ secrets.MONGODB_PUBLIC_KEY }}:${{ secrets.MONGODB_PRIVATE_KEY }}" \
                 -H "Content-Type: application/json"' EXIT
@@ -84,3 +89,4 @@ jobs:
 #      - name: Run frontend tests
 #        run: npm test
 #        working-directory: ./frontend
+
