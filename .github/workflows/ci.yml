@@ -41,13 +41,6 @@ jobs:
       - name: Wait for MongoDB Atlas to update
         run: sleep 60
 
-      - name: Set up IP removal trap
-        run: |
-          trap 'echo "🧹 Removing IP from MongoDB Atlas...";
-                curl -X DELETE "https://cloud.mongodb.com/api/atlas/v1.0/groups/${{ secrets.MONGODB_PROJECT_ID }}/accessList/${{ env.PUBLIC_IP }}" \
-                -u "${{ secrets.MONGODB_PUBLIC_KEY }}:${{ secrets.MONGODB_PRIVATE_KEY }}" \
-                -H "Content-Type: application/json"' EXIT
-
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
@@ -67,6 +60,7 @@ jobs:
 
       - name: Debug MongoDB Connection
         run: |
+          echo "🔍 Checking MongoDB URI..."
           if [[ -z "${{ secrets.MONGODB_URI }}" ]]; then
             echo "❌ Ошибка: MONGODB_URI пустой!"
             exit 1
@@ -86,7 +80,20 @@ jobs:
         run: npm run lint
         working-directory: ./frontend
 
-#      - name: Run frontend tests
-#        run: npm test
-#        working-directory: ./frontend
+      - name: Run frontend tests
+        run: npm test
+        working-directory: ./frontend
+
+      - name: Remove test results
+        if: always()
+        run: rm -f frontend/results.json
+
+      - name: Remove Public IP from MongoDB Atlas
+        if: always()
+        run: |
+          echo "🧹 Removing IP from MongoDB Atlas..."
+          curl -X DELETE "https://cloud.mongodb.com/api/atlas/v1.0/groups/${{ secrets.MONGODB_PROJECT_ID }}/accessList/${{ env.PUBLIC_IP }}" \
+          -u "${{ secrets.MONGODB_PUBLIC_KEY }}:${{ secrets.MONGODB_PRIVATE_KEY }}" \
+          -H "Content-Type: application/json"
+
 
