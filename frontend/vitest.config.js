@@ -1,23 +1,18 @@
-import { fileURLToPath } from 'node:url'
-import { mergeConfig, defineConfig, configDefaults } from 'vitest/config'
-import viteConfig from './vite.config'
+import path from 'path' // ⬅️ Импортируем path, он используется
+import { defineConfig } from 'vitest/config'
 import vue from '@vitejs/plugin-vue'
 
-export default mergeConfig(
-  viteConfig,
-  defineConfig({
-    plugins: [vue()],
-    resolve: {
-      alias: {
-        '@': fileURLToPath(new URL('./src', import.meta.url)), // Корректный alias
-      },
+const __dirname = path.resolve() // ⬅️ Правильный способ задать __dirname
+
+export default defineConfig({
+  plugins: [vue()],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
     },
-    test: {
-      globals: true,
-      environment: 'jsdom',
-      exclude: [...configDefaults.exclude, 'e2e/**'],
-      root: fileURLToPath(new URL('./', import.meta.url)),
-      reporters: 'default',
-    },
-  }),
-)
+  },
+})

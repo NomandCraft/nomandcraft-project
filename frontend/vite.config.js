@@ -1,18 +1,21 @@
-import { fileURLToPath, URL } from 'node:url'
-
+import { fileURLToPath } from 'node:url'
+import path from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 
-// https://vite.dev/config/
+const __dirname = path.dirname(fileURLToPath(import.meta.url)) // Создаём `__dirname`
+
 export default defineConfig({
   plugins: [vue(), vueDevTools()],
-  css: {
-    postcss: fileURLToPath(new URL('./postcss.config.js', import.meta.url)),
-  },
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@': path.resolve(__dirname, 'src'),
     },
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    exclude: ['node_modules', 'dist', 'cypress'],
   },
 })
