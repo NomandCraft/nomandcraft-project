@@ -15,6 +15,12 @@ jobs:
       MONGODB_PRIVATE_KEY: ${{ secrets.MONGODB_PRIVATE_KEY }}
       MONGODB_PROJECT_ID: ${{ secrets.MONGODB_PROJECT_ID }}
 
+    services:
+      mongodb:
+        image: mongo:latest
+        ports:
+          - 27017:27017
+
     steps:
       - name: Check out code
         uses: actions/checkout@v3
@@ -23,15 +29,11 @@ jobs:
         id: get_ip
         run: |
           echo "Fetching Public IP..."
-          PUBLIC_IP=$(curl -s ifconfig.me)
-          echo "Public IP: $PUBLIC_IP"
-          echo "PUBLIC_IP=$PUBLIC_IP" >> $GITHUB_ENV
+          echo "PUBLIC_IP=$(curl -s ifconfig.me)" >> $GITHUB_ENV
 
       - name: Debug GitHub Actions IP
         run: |
           echo "🔍 GitHub Actions Public IP: ${{ env.PUBLIC_IP }}"
-
-
 
       - name: Add Public IP to MongoDB Atlas
         run: |
@@ -42,16 +44,15 @@ jobs:
             --data-raw "{ \"ipAddress\": \"${{ env.PUBLIC_IP }}\", \"comment\": \"GitHub Actions Runner\" }"
 
       - name: Wait for MongoDB Atlas to update
-        run: sleep 60
+        run: sleep 30
 
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "22.x"
-          cache: "npm"
 
       - name: Install backend dependencies
-        run: npm ci
+        run: npm install
         working-directory: ./backend
 
       - name: Lint backend
@@ -73,7 +74,7 @@ jobs:
         working-directory: ./backend
 
       - name: Install frontend dependencies
-        run: npm ci
+        run: npm install
         working-directory: ./frontend
 
       - name: Lint frontend
@@ -95,4 +96,5 @@ jobs:
           curl -X DELETE "https://cloud.mongodb.com/api/atlas/v1.0/groups/${{ secrets.MONGODB_PROJECT_ID }}/accessList/${{ env.PUBLIC_IP }}" \
           -u "${{ secrets.MONGODB_PUBLIC_KEY }}:${{ secrets.MONGODB_PRIVATE_KEY }}" \
           -H "Content-Type: application/json"
+
 
