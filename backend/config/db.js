@@ -2,20 +2,20 @@ import mongoose from 'mongoose';
 
 const connectDB = async () => {
   if (mongoose.connection.readyState >= 1) {
-    console.log('✅ Уже подключено к MongoDB');
+    console.log('✅ Already connected to Mongodb');
     return;
   }
 
   try {
     if (!process.env.MONGODB_URI) {
-      throw new Error('❌ MONGODB_URI не задан!');
+      throw new Error('❌ Mongodb_uri is not set!');
     }
 
-    console.log('🔍 Подключение к MongoDB:', process.env.MONGODB_URI);
+    console.log('🔍 Connection to Mongodb:', process.env.MONGODB_URI);
     await mongoose.connect(process.env.MONGODB_URI);
     console.log('✅ MongoDB успешно подключен');
   } catch (error) {
-    console.error('❌ Ошибка подключения к MongoDB:', error.message);
+    console.error('❌ Mongodb connection error:', error.message);
     process.exit(1);
   }
 };
