@@ -22,21 +22,23 @@ jobs:
       - name: Get GitHub Actions Runner Public IP
         id: get_ip
         run: |
+          set -e
           echo "Fetching Public IP..."
           PUBLIC_IP=$(curl -s ifconfig.me)
           echo "Public IP: $PUBLIC_IP"
-          echo "PUBLIC_IP=$PUBLIC_IP" >> $GITHUB_ENV
+          echo "PUBLIC_IP=${PUBLIC_IP}" >> $GITHUB_ENV
 
       - name: Debug GitHub Actions IP
         run: echo "🔍 GitHub Actions Public IP: $PUBLIC_IP"
 
       - name: Add Public IP to MongoDB Atlas
         run: |
+          set -e
           echo "🚀 Adding IP to MongoDB Atlas..."
           curl -X POST "https://cloud.mongodb.com/api/atlas/v1.0/groups/${{ secrets.MONGODB_PROJECT_ID }}/accessList" \
             -u "${{ secrets.MONGODB_PUBLIC_KEY }}:${{ secrets.MONGODB_PRIVATE_KEY }}" \
             -H "Content-Type: application/json" \
-            --data-raw "{ \"ipAddress\": \"${{ env.PUBLIC_IP }}\", \"comment\": \"GitHub Actions Runner\" }"
+            --data-raw '{ "ipAddress": "'"${{ env.PUBLIC_IP }}"'", "comment": "GitHub Actions Runner" }'
 
       - name: Wait for MongoDB Atlas to update
         run: sleep 60
@@ -46,9 +48,6 @@ jobs:
         with:
           node-version: "22.x"
           cache: "npm"
-          cache-dependency-path: |
-            backend/package-lock.json
-            frontend/package-lock.json
 
       - name: Install backend dependencies
         run: npm ci
@@ -60,6 +59,7 @@ jobs:
 
       - name: Debug MongoDB Connection
         run: |
+          set -e
           echo "🔍 Checking MongoDB URI..."
           if [[ -z "${{ secrets.MONGODB_URI }}" ]]; then
             echo "❌ Ошибка: MONGODB_URI пустой!"
@@ -86,11 +86,12 @@ jobs:
 
       - name: Remove test results
         if: always()
-        run: rm -f frontend/results.json
+        run: rm -f frontend/results.json || true
 
       - name: Remove Public IP from MongoDB Atlas
         if: always()
         run: |
+          set -e
           echo "🧹 Removing IP from MongoDB Atlas..."
           curl -X DELETE "https://cloud.mongodb.com/api/atlas/v1.0/groups/${{ secrets.MONGODB_PROJECT_ID }}/accessList/${{ env.PUBLIC_IP }}" \
           -u "${{ secrets.MONGODB_PUBLIC_KEY }}:${{ secrets.MONGODB_PRIVATE_KEY }}" \
