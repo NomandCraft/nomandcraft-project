@@ -44,7 +44,7 @@ jobs:
             --data-raw "{ \"ipAddress\": \"${{ env.PUBLIC_IP }}\", \"comment\": \"GitHub Actions Runner\" }"
 
       - name: Wait for MongoDB Atlas to update
-        run: sleep 30
+        run: sleep 60
 
       - name: Use Node.js
         uses: actions/setup-node@v3
@@ -62,12 +62,19 @@ jobs:
       - name: Debug MongoDB Connection
         run: |
           echo "🔍 Checking MongoDB URI..."
+          echo "MONGODB_URI=${{ secrets.MONGODB_URI }}"
           if [[ -z "${{ secrets.MONGODB_URI }}" ]]; then
             echo "❌ Ошибка: MONGODB_URI пустой!"
             exit 1
           else
             echo "✅ MONGODB_URI загружен"
           fi
+
+      - name: Set MongoDB URI for Local Testing
+        run: echo "MONGODB_URI=mongodb://localhost:27017/test" >> $GITHUB_ENV
+
+      - name: Wait for MongoDB to be ready
+        run: sleep 10
 
       - name: Run backend tests
         run: npm test
@@ -96,5 +103,3 @@ jobs:
           curl -X DELETE "https://cloud.mongodb.com/api/atlas/v1.0/groups/${{ secrets.MONGODB_PROJECT_ID }}/accessList/${{ env.PUBLIC_IP }}" \
           -u "${{ secrets.MONGODB_PUBLIC_KEY }}:${{ secrets.MONGODB_PRIVATE_KEY }}" \
           -H "Content-Type: application/json"
-
-
