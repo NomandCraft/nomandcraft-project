@@ -11,7 +11,7 @@ beforeAll(async () => {
   }
 });
 
-afterAll((done) => {
+/* afterAll((done) => {
   mongoose.connection.close().then(() => {
     if (server && server.close) {
       server.close(done);
@@ -19,6 +19,13 @@ afterAll((done) => {
       done();
     }
   });
+}); */
+
+afterAll(async () => {
+  await mongoose.connection.close();
+  if (server && server.close) {
+    await new Promise((resolve) => server.close(resolve));
+  }
 });
 
 describe('Campers API Integration Tests', () => {
@@ -44,6 +51,9 @@ describe('Campers API Integration Tests', () => {
   });
 
   test('POST /api/campers creates camper successfully', async () => {
+    /**
+     * @description Creates a camper with the given data
+     */
     const camperData = {
       name: `Test Camper ${Date.now()}`,
       images: ['https://example.com/camper.jpg'],
