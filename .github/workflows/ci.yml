@@ -40,6 +40,7 @@ jobs:
             -H "Content-Type: application/json" \
             --data-raw '{ "ipAddress": "'"${{ env.PUBLIC_IP }}"'", "comment": "GitHub Actions Runner" }'
 
+
       - name: Wait for MongoDB Atlas to update
         run: sleep 60
 
