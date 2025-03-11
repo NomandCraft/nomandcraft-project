@@ -12,13 +12,10 @@ const connectDB = async () => {
     }
 
     console.log('🔍 Подключение к MongoDB:', process.env.MONGODB_URI);
-    await mongoose.connect(process.env.MONGODB_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(process.env.MONGODB_URI);
     console.log('✅ MongoDB успешно подключен');
   } catch (error) {
-    console.error('❌ Ошибка подключения к MongoDB:', error);
+    console.error('❌ Ошибка подключения к MongoDB:', error.message);
     process.exit(1);
   }
 };
