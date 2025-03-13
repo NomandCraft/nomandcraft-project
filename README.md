@@ -16,6 +16,7 @@
 - [Deployment](#deployment)
 - [Project Structure](#project-structure)
 - [Authors & Contact](#authors--contact)
+- [🔝 Back to Top](#nomandcraft---preliminary-documentation)
 
 📌
 
@@ -44,6 +45,8 @@
 - Tailwind CSS (Responsive styling)
 - Axios (HTTP requests to API)
 - Cypress, Vitest (Testing tools)
+ 
+- (#nomandcraft---preliminary-documentation)
 
 ---
 
@@ -90,6 +93,8 @@ npm run dev
 
 By default, the frontend will be available at `http://localhost:5173`, and the API at `http://localhost:5000`.
 
+[🔝 Back to Top](#nomandcraft---preliminary-documentation)
+
 ---
 
 <h2 id="environment-variables"> 🔥 Environment Variables</h2>
@@ -103,7 +108,9 @@ JWT_SECRET=your_secret_key
 CORS_ORIGIN=http://localhost:5173
 ```
 
+[🔝 Back to Top](#nomandcraft---preliminary-documentation)
 ---
+
 
 <h2 id="api-documentation">🌍 API Documentation</h2>
 
@@ -166,6 +173,8 @@ POST /api/users/login
 GET /api/users
 ```
 
+[🔝 Back to Top](#nomandcraft---preliminary-documentation)
+
 ---
 
 <h2 id="middleware">🛠️ Middleware</h2>
@@ -173,6 +182,8 @@ GET /api/users
 - **authMiddleware** – Verifies JWT token before allowing access to protected routes.
 - **errorHandler** – Centralized error handler.
 - **rateLimiter** – Limits requests per IP.
+
+[🔝 Back to Top](#nomandcraft---preliminary-documentation)
 
 ---
 
@@ -214,6 +225,8 @@ npm run test:e2e
 - Vue Router functionality
 - API integration tests
 
+[🔝 Back to Top](#nomandcraft---preliminary-documentation)
+
 ---
 
 <h2 id="deployment">🚀 Deployment</h2>
@@ -231,6 +244,8 @@ vercel deploy
 npm run build
 netlify deploy
 ```
+
+[🔝 Back to Top](#nomandcraft---preliminary-documentation)
 
 ---
 
@@ -264,6 +279,8 @@ nomandcraft-project/
 │── README.md (Documentation)
 ```
 
+[🔝 Back to Top](#nomandcraft---preliminary-documentation)
+
 ---
 
  <h2 id="authors--contact">📢 Authors & Contact</h2>
@@ -275,3 +292,5 @@ nomandcraft-project/
 ---
 
 > **Note:** This README will be updated as the project progresses.
+
+[🔝 Back to Top](#nomandcraft---preliminary-documentation)
