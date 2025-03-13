@@ -14,7 +14,8 @@ let server = null;
 
 if (process.env.NODE_ENV !== 'test') {
   server = app.listen(PORT, () => {
-    console.log(`🚀 Server started on port ${PORT}`);
+    /*   console.log(`🚀 Server started on port ${PORT}`); */
+    console.log(`🚀 Server running at: http://localhost:${PORT}`);
   });
 
   setupShutdownHandler(server);

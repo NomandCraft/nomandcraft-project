@@ -2,7 +2,7 @@ import Camper from '../models/camper.js';
 import catchAsync from '../utils/catchAsync.js';
 import mongoose from 'mongoose';
 
-// Создание нового кемпера
+// Creation of a new camper
 export const createCamper = catchAsync(async (req, res, next) => {
   try {
     if (
@@ -13,7 +13,7 @@ export const createCamper = catchAsync(async (req, res, next) => {
     }
 
     const camper = new Camper(req.body);
-    await camper.validate(); // Проверка перед сохранением
+    await camper.validate();
     await camper.save();
     res.status(201).json(camper);
   } catch (error) {
@@ -24,7 +24,7 @@ export const createCamper = catchAsync(async (req, res, next) => {
   }
 });
 
-// Получение всех кемперов с фильтрацией
+// Obtaining all camers with filtering, pagination and sorting
 export const getAllCampers = catchAsync(async (req, res) => {
   const {
     category,
@@ -32,7 +32,12 @@ export const getAllCampers = catchAsync(async (req, res) => {
     maxPrice,
     minSleepingCapacity,
     maxSleepingCapacity,
+    page = 1,
+    limit = 10,
+    sortBy = 'name',
+    order = 'asc',
   } = req.query;
+
   const filter = {};
 
   if (category) {
@@ -56,16 +61,35 @@ export const getAllCampers = catchAsync(async (req, res) => {
       filter.sleepingCapacity.$lte = Number(maxSleepingCapacity);
   }
 
-  console.log('Applying filter:', filter);
+  // Sort settings
+  const sortOptions = {};
+  const sortOrder = order === 'desc' ? -1 : 1;
+
+  if (sortBy === 'price' || sortBy === 'name') {
+    sortOptions[sortBy] = sortOrder;
+  } else {
+    sortOptions['price'] = -1; // By default, we sort it from the high price to a low
+  }
 
   const campers = await Camper.find(filter)
-    .populate('category', 'name') // Загружаем только поле `name` из категории
-    .populate('reviews.user', 'name'); // Загружаем `name` пользователей
+    .populate('category', 'name')
+    .populate('reviews.user', 'name')
+    .sort(sortOptions)
+    .skip((page - 1) * limit)
+    .limit(Number(limit));
 
-  res.json(campers);
+  const total = await Camper.countDocuments(filter);
+
+  res.json({
+    campers,
+    page: Number(page),
+    limit: Number(limit),
+    totalPages: Math.ceil(total / limit),
+    totalItems: total,
+  });
 });
 
-// Получение одного кемпера по ID
+// Receiving cupers by ID
 export const getCamperById = catchAsync(async (req, res, next) => {
   if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
     return res.status(400).json({ error: 'Invalid camper ID format' });
@@ -75,13 +99,15 @@ export const getCamperById = catchAsync(async (req, res, next) => {
     'category reviews.user',
     'name'
   );
+
   if (!camper) {
     return next({ statusCode: 404, message: 'Camper not found' });
   }
+
   res.json(camper);
 });
 
-// Обновление кемпера
+// Cemper update
 export const updateCamper = catchAsync(async (req, res, next) => {
   if (
     req.body.category &&
@@ -104,12 +130,14 @@ export const updateCamper = catchAsync(async (req, res, next) => {
   res.json(camper);
 });
 
-// Удаление кемпера
+// Removing the campers
 export const deleteCamper = catchAsync(async (req, res, next) => {
+  //? If the user sends the request with the invalid ID format, the server returns a 400 status code with the error message "Invalid camper ID format".
+
   if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
     return res.status(400).json({ error: 'Invalid camper ID format' });
   }
-
+  //? If the camper is not found, the server returns a 404 status code with the error message "Camper not found".
   const camper = await Camper.findByIdAndDelete(req.params.id);
   if (!camper) {
     return next({ statusCode: 404, message: 'Camper not found' });

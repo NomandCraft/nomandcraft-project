@@ -7,12 +7,14 @@ import camperRoutes from './routes/campers.js';
 import userRoutes from './routes/users.js';
 import categoryRoutes from './routes/categories.js';
 import errorHandler from './middleware/errorHandler.js';
+import helmet from 'helmet';
 
 connectDB();
 
 const app = express();
 
-app.use(express.json());
+app.use(helmet());
+app.use(express.json({ limit: '10kb' }));
 app.use(cors());
 app.use(morgan('dev'));
 
