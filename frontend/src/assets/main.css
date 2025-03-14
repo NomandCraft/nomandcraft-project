@@ -17,6 +17,10 @@ a,
 	color: hsla(160, 100%, 37%, 1);
 	transition: 0.4s;
 	padding: 3px;
+	-webkit-transition: 0.4s;
+	-moz-transition: 0.4s;
+	-ms-transition: 0.4s;
+	-o-transition: 0.4s;
 }
 
 @media (hover: hover) {
