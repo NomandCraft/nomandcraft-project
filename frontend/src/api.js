@@ -7,22 +7,37 @@ const api = axios.create({
   },
 })
 
-// Получить всех кемперов
+// Get all campers
 export const fetchCampers = async () => {
-  const response = await api.get('/api/campers')
-  return response.data
+  try {
+    const response = await api.get('/api/campers')
+    return response.data || { campers: [] } // ✅ Возвращаем объект с campers
+  } catch (error) {
+    console.error('Ошибка при получении кемперов:', error)
+    return { campers: [] } // ✅ Безопасное значение
+  }
 }
 
-// Получить категории
+// Get categories
 export const fetchCategories = async () => {
-  const response = await api.get('/api/categories')
-  return response.data
+  try {
+    const response = await api.get('/api/categories')
+    return Array.isArray(response.data) ? response.data : []
+  } catch (error) {
+    console.error('Error when receiving categories:', error)
+    return []
+  }
 }
 
-// Получить пользователей (только для админов)
+// Get users (only for admins)
 export const fetchUsers = async () => {
-  const response = await api.get('/api/users')
-  return response.data
+  try {
+    const response = await api.get('/api/users')
+    return Array.isArray(response.data) ? response.data : []
+  } catch (error) {
+    console.error('Error when receiving users:', error)
+    return []
+  }
 }
 
 export default api
