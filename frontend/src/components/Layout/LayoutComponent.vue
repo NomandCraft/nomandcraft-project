@@ -1,18 +1,17 @@
 <script setup>
-import Header from '../HeaderComponent.vue'
-import Footer from '../FooterComponent.vue'
+import HeaderComponent from '@/components/layout/HeaderComponent.vue'
+import FooterComponent from '@/components/layout/FooterComponent.vue'
 </script>
 
 <template>
   <div class="layout">
-    <Header />
+    <HeaderComponent />
     <main class="content">
       <div class="container">
         <slot />
-        <!-- Page content will be inserted here -->
       </div>
     </main>
-    <Footer />
+    <FooterComponent />
   </div>
 </template>
 

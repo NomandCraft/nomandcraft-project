@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import { describe, it, expect } from 'vitest'
 import { createRouter, createWebHistory } from 'vue-router'
-import App from '@/views/App.vue' // ✅ Correct imports
+import App from '@/App.vue' // ✅ Correct imports
 
 // Создаём тестовый router
 const router = createRouter({

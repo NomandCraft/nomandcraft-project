@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import CamperCard from '@/components/CamperCard.vue'
-import { fetchCampers } from '@/api.js'
+import { fetchCampers } from '@/utils/api.js'
 
 const campers = ref([])
 

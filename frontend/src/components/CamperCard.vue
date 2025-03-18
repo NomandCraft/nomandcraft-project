@@ -12,7 +12,9 @@
 
     <div class="p-4">
       <h3 class="font-bold text-lg">{{ camper.name }}</h3>
-      <p class="text-gray-600">{{ camper.formattedPrice || 'Price unavailable' }}</p>
+      <p class="text-gray-600">
+        {{ camper.price ? formattedPrice(camper.price) : 'Price unavailable' }}
+      </p>
       <RouterLink v-if="camper._id" :to="`/campers/${camper._id}`" class="btn-primary">
         Read more
       </RouterLink>
@@ -24,13 +26,10 @@
 defineProps({
   camper: {
     type: Object,
-    required: false,
-    default: () => ({
-      name: 'Unknown camper',
-      description: 'No information',
-      images: [],
-      formattedPrice: 'N/A',
-    }),
+    required: true,
   },
 })
+
+const formattedPrice = (price) =>
+  new Intl.NumberFormat('en-US', { style: 'currency', currency: 'EUR' }).format(price)
 </script>

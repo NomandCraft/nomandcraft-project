@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
-import { fetchCampers } from '@/api.js'
+import { fetchCampers } from '@/utils/api.js'
 
 const route = useRoute()
 const camper = ref(null)

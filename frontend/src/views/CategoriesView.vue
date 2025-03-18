@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import { fetchCategories } from '@/api.js'
+import { fetchCategories } from '@/utils/api.js'
 
 const categories = ref([])
 
