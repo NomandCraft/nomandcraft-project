@@ -46,6 +46,21 @@ const routes = [
     component: () => import('@/views/CamperDetails.vue'),
     meta: { title: 'Camper Details | Nomand Craft' },
   },
+  {
+    path: '/dashboard',
+    component: () => import('@/views/DashboardView.vue'),
+    meta: { title: 'Dashboard | Nomand Craft' },
+  },
+  {
+    path: '/settings',
+    component: () => import('@/views/SettingsView.vue'),
+    meta: { title: 'Settings | Nomand Craft' },
+  },
+  {
+    path: '/logout',
+    component: () => import('@/views/LogoutView.vue'),
+    meta: { title: 'Logout | Nomand Craft' },
+  },
 ]
 
 const router = createRouter({ history: createWebHistory(), routes })

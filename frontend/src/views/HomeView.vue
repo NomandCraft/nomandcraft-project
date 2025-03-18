@@ -1,16 +1,16 @@
 <script setup>
-import { RouterLink } from 'vue-router'
+/* import { RouterLink } from 'vue-router' */
 </script>
 
 <template>
   <section class="home">
     <h1>🚐 Welcome to Nomadcraft!</h1>
     <p>Find the perfect camper for your next adventure.</p>
-    <div class="buttons">
+    <!--   <div class="buttons">
       <RouterLink to="/campers" class="btn">🏕️ View Campers</RouterLink>
       <RouterLink to="/categories" class="btn">📂 Categories</RouterLink>
       <RouterLink to="/users" class="btn">👥 Users</RouterLink>
-    </div>
+    </div> -->
   </section>
 </template>
 
