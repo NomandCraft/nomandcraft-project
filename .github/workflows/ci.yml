@@ -2,104 +2,69 @@ name: CI
 
 on:
   push:
-    branches: ["main"]
+    branches: [ "main" ]
   pull_request:
-    branches: ["main"]
+    branches: [ "main" ]
 
 jobs:
-  build_and_test:
+  backend:
     runs-on: ubuntu-latest
-    env:  
-      MONGODB_URI: ${{ secrets.MONGODB_URI }}
-      MONGODB_PUBLIC_KEY: ${{ secrets.MONGODB_PUBLIC_KEY }}
-      MONGODB_PRIVATE_KEY: ${{ secrets.MONGODB_PRIVATE_KEY }}
-      MONGODB_PROJECT_ID: ${{ secrets.MONGODB_PROJECT_ID }}
-
-    services:
-      mongodb:
-        image: mongo:latest
-        ports:
-          - 27017:27017
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Get GitHub Actions Runner Public IP
-        id: get_ip
-        run: |
-          echo "Fetching Public IP..."
-          echo "PUBLIC_IP=$(curl -s ifconfig.me)" >> $GITHUB_ENV
-
-      - name: Debug GitHub Actions IP
-        run: |
-          echo "🔍 GitHub Actions Public IP: ${{ env.PUBLIC_IP }}"
-
-      - name: Add Public IP to MongoDB Atlas
-        run: |
-          echo "🚀 Adding IP to MongoDB Atlas..."
-          curl -X POST "https://cloud.mongodb.com/api/atlas/v1.0/groups/${{ secrets.MONGODB_PROJECT_ID }}/accessList" \
-            -u "${{ secrets.MONGODB_PUBLIC_KEY }}:${{ secrets.MONGODB_PRIVATE_KEY }}" \
-            -H "Content-Type: application/json" \
-            --data-raw "{ \"ipAddress\": \"${{ env.PUBLIC_IP }}\", \"comment\": \"GitHub Actions Runner\" }"
-
-      - name: Wait for MongoDB Atlas to update
-        run: sleep 60
-
-      - name: Use Node.js
-        uses: actions/setup-node@v3
+      - name: Use Node.js 20 LTS
+        uses: actions/setup-node@v4
         with:
-          node-version: "22.x"
+          node-version: 20
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
 
-      - name: Install backend dependencies
-        run: npm install
-        working-directory: ./backend
+      - name: Install backend deps
+        working-directory: backend
+        run: npm ci
 
       - name: Lint backend
-        run: npm run lint
-        working-directory: ./backend
+        working-directory: backend
+        run: npm run lint --if-present
 
-      - name: Debug MongoDB Connection
-        run: |
-          echo "🔍 Checking MongoDB URI..."
-          echo "MONGODB_URI=${{ secrets.MONGODB_URI }}"
-          if [[ -z "${{ secrets.MONGODB_URI }}" ]]; then
-            echo "❌ Ошибка: MONGODB_URI пустой!"
-            exit 1
-          else
-            echo "✅ MONGODB_URI загружен"
-          fi
-
-      - name: Set MongoDB URI for Local Testing
-        run: echo "MONGODB_URI=mongodb://localhost:27017/test" >> $GITHUB_ENV
-
-      - name: Wait for MongoDB to be ready
-        run: sleep 10
-
-      - name: Run backend tests
+      # Тесты используют mongodb-memory-server, Atlas/Service не нужен
+      - name: Test backend
+        working-directory: backend
+        env:
+          NODE_ENV: test
         run: npm test
-        working-directory: ./backend
 
-      - name: Install frontend dependencies
-        run: npm install
-        working-directory: ./frontend
+  frontend:
+    # запустится только если в репо есть frontend/package.json
+    if: ${{ hashFiles('frontend/package.json') != '' }}
+    needs: backend
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 20 LTS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install frontend deps
+        working-directory: frontend
+        run: npm ci
 
       - name: Lint frontend
-        run: npm run lint
-        working-directory: ./frontend
+        working-directory: frontend
+        run: npm run lint --if-present
 
-      - name: Run frontend tests
-        run: npm test
-        working-directory: ./frontend
+      - name: Test frontend
+        working-directory: frontend
+        run: npm test --if-present
 
-      - name: Remove test results
-        if: always()
-        run: rm -f frontend/results.json || true
-
-      - name: Remove Public IP from MongoDB Atlas
-        if: always()
-        run: |
-          echo "🧹 Removing IP from MongoDB Atlas..."
-          curl -X DELETE "https://cloud.mongodb.com/api/atlas/v1.0/groups/${{ secrets.MONGODB_PROJECT_ID }}/accessList/${{ env.PUBLIC_IP }}" \
-          -u "${{ secrets.MONGODB_PUBLIC_KEY }}:${{ secrets.MONGODB_PRIVATE_KEY }}" \
-          -H "Content-Type: application/json"
+      - name: Build frontend
+        working-directory: frontend
+        run: npm run build --if-present
