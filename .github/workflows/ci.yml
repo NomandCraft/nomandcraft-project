@@ -5,17 +5,15 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   backend:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Check out code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Use Node.js 20 LTS
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
@@ -29,25 +27,34 @@ jobs:
         working-directory: backend
         run: npm run lint --if-present
 
-      # Тесты используют mongodb-memory-server, Atlas/Service не нужен
       - name: Test backend
         working-directory: backend
         env:
           NODE_ENV: test
         run: npm test
 
-  frontend:
-    # запустится только если в репо есть frontend/package.json
-    if: ${{ hashFiles('frontend/package.json') != '' }}
-    needs: backend
+  detect-frontend:
     runs-on: ubuntu-latest
-
+    outputs:
+      has_frontend: ${{ steps.check.outputs.has_frontend }}
     steps:
-      - name: Check out code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+      - id: check
+        run: |
+          if [ -f frontend/package.json ]; then
+            echo "has_frontend=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_frontend=false" >> "$GITHUB_OUTPUT"
+          fi
 
-      - name: Use Node.js 20 LTS
-        uses: actions/setup-node@v4
+  frontend:
+    needs: [backend, detect-frontend]
+    if: ${{ needs.detect-frontend.outputs.has_frontend == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
@@ -68,3 +75,4 @@ jobs:
       - name: Build frontend
         working-directory: frontend
         run: npm run build --if-present
+
