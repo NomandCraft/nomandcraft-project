@@ -10,7 +10,7 @@ jest.setTimeout(30000);
 
 beforeAll(async () => {
   mongo = await MongoMemoryServer.create();
-  await connectDB(mongo.getUri());
+  await connectDB(mongo.getUri()); // подключаемся к in-memory Mongo
 });
 
 afterAll(async () => {
@@ -41,13 +41,16 @@ describe('Campers API Integration Tests', () => {
   });
 
   test('POST /api/campers creates camper successfully', async () => {
-    // Сначала создаём категорию
+    // 1) создаём категорию
     const categoryRes = await request(app)
       .post('/api/categories')
-      .send({ name: `Test Category ${Date.now()}` });
+      .send({ name: `Test Category ${Date.now()}` })
+      .expect(201);
 
-    const categoryId = categoryRes.body._id || categoryRes.body.id;
+    const categoryId = categoryRes.body.id || categoryRes.body._id; // <- важно
+    expect(categoryId).toBeTruthy();
 
+    // 2) создаём кемпер
     const camperData = {
       name: `Test Camper ${Date.now()}`,
       images: ['https://example.com/camper.jpg'],
@@ -58,12 +61,16 @@ describe('Campers API Integration Tests', () => {
       features: ['Solar panels', 'Extra battery'],
     };
 
-    const res = await request(app).post('/api/campers').send(camperData);
-    expect(res.status).toBe(201);
+    const res = await request(app)
+      .post('/api/campers')
+      .send(camperData)
+      .expect(201);
+
     expect(res.body.name).toBe(camperData.name);
     expect(res.body.price).toBe(camperData.price);
 
-    // удаляем
-    await request(app).delete(`/api/campers/${res.body._id}`).expect(204);
+    // 3) чистим за собой
+    const camperId = res.body.id || res.body._id;
+    await request(app).delete(`/api/campers/${camperId}`).expect(204);
   });
 });
