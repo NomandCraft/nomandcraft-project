@@ -46,7 +46,7 @@ describe('Campers API Integration Tests', () => {
       .post('/api/categories')
       .send({ name: `Test Category ${Date.now()}` });
 
-    const categoryId = categoryRes.body._id;
+    const categoryId = categoryRes.body._id || categoryRes.body.id;
 
     const camperData = {
       name: `Test Camper ${Date.now()}`,

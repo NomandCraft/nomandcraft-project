@@ -11,8 +11,9 @@ router
 
 router
   .route('/:id')
-  .get(validateObjectId, categoryController.getCategoryById)
-  .put(validateObjectId, categoryController.updateCategory)
-  .delete(validateObjectId, categoryController.deleteCategory);
+  .all(validateObjectId)
+  .get(categoryController.getCategoryById)
+  .patch(categoryController.updateCategory) // ← было .put(...)
+  .delete(categoryController.deleteCategory);
 
 export default router;
