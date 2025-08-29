@@ -1,21 +1,21 @@
 import request from 'supertest';
 import mongoose from 'mongoose';
 import app from '../app.js';
-import server from '../server.js';
+import connectDB from '../config/db.js';
+import { MongoMemoryServer } from 'mongodb-memory-server';
+
+let mongo;
 
 jest.setTimeout(30000);
 
 beforeAll(async () => {
-  if (mongoose.connection.readyState === 0) {
-    await mongoose.connect(process.env.MONGODB_URI);
-  }
+  mongo = await MongoMemoryServer.create();
+  await connectDB(mongo.getUri());
 });
 
 afterAll(async () => {
   await mongoose.connection.close();
-  if (server && server.close) {
-    await new Promise((resolve) => server.close(resolve));
-  }
+  await mongo.stop();
 });
 
 describe('Campers API Integration Tests', () => {
@@ -41,38 +41,29 @@ describe('Campers API Integration Tests', () => {
   });
 
   test('POST /api/campers creates camper successfully', async () => {
-    /**
-     * @description Creates a camper with the given data
-     */
-
-    // Incredible categories and receipt of your ID
+    // Сначала создаём категорию
     const categoryRes = await request(app)
       .post('/api/categories')
-      .send({ name: 'Test Category' });
+      .send({ name: `Test Category ${Date.now()}` });
 
-    const categoryId = categoryRes.body._id; // Now we have the correct Objectid
+    const categoryId = categoryRes.body._id;
 
     const camperData = {
       name: `Test Camper ${Date.now()}`,
       images: ['https://example.com/camper.jpg'],
-      category: categoryId, // Now we use the resulting Objectid
+      category: categoryId,
       sleepingCapacity: 4,
       price: 25000,
       description: 'A camper for testing purposes',
       features: ['Solar panels', 'Extra battery'],
     };
 
-    // Create camper
-    const res = await request(app)
-      .post('/api/campers')
-      .send(camperData)
-      .expect(201);
-
-    // Now check that the camper was created correctly
+    const res = await request(app).post('/api/campers').send(camperData);
+    expect(res.status).toBe(201);
     expect(res.body.name).toBe(camperData.name);
     expect(res.body.price).toBe(camperData.price);
 
-    //  delete the camper after the test
+    // удаляем
     await request(app).delete(`/api/campers/${res.body._id}`).expect(204);
   });
 });

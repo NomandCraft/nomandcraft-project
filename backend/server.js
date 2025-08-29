@@ -5,22 +5,31 @@ import connectDB from './config/db.js';
 import clearPort from './utils/clearPort.js';
 import setupShutdownHandler from './utils/shutdownHandler.js';
 
-const PORT =
-  process.env.PORT || (process.env.NODE_ENV === 'test' ? 5001 : 5000);
+const PORT = process.env.PORT || 5000;
 
-let server;
-try {
-  await connectDB(process.env.MONGODB_URI); // дождались БД
-  await clearPort(PORT);
+let server = null;
 
-  server = app.listen(PORT, () => {
-    console.log(`🚀 Server running at: http://localhost:${PORT}`);
-  });
+export async function start() {
+  try {
+    await connectDB(); // URI берём внутри connectDB
+    if (process.env.NODE_ENV !== 'test') {
+      await clearPort(PORT);
+      server = app.listen(PORT, () => {
+        console.log(`🚀 Server running at: http://localhost:${PORT}`);
+      });
+      setupShutdownHandler(server);
+    }
+    return server;
+  } catch (err) {
+    console.error('💥 Startup failed:', err.message);
+    if (process.env.NODE_ENV !== 'test') process.exit(1); // НЕ падаем в тестах
+    throw err;
+  }
+}
 
-  setupShutdownHandler(server);
-} catch (err) {
-  console.error('💥 Startup failed:', err.message);
-  process.exit(1);
+// Автозапуск только вне тестов
+if (process.env.NODE_ENV !== 'test') {
+  start();
 }
 
 export default server;
