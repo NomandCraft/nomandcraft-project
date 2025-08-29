@@ -4,7 +4,7 @@ import { validateObjectId } from '../middleware/validateObjectId.js';
 
 const router = express.Router();
 
-router.route('/').post(campers.createCamper).get(campers.getAllCampers); // Вызываем обновленный контроллер
+router.route('/').post(campers.createCamper).get(campers.getAllCampers); // Call an updated controller
 
 router
   .route('/:id')
