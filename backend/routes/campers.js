@@ -10,7 +10,7 @@ router
   .route('/:id')
   .all(validateObjectId)
   .get(campers.getCamperById)
-  .put(campers.updateCamper)
+  .patch(campers.updateCamper)
   .delete(campers.deleteCamper);
 
 export default router;
