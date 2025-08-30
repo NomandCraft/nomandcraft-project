@@ -4,21 +4,21 @@ import slugify from 'slugify';
 const { Schema } = mongoose;
 
 function isHttpImage(url) {
-  // http(s) + расширение картинки, допускаем query-параметры
+  // http(s) + Extension of the picture, allow query parameters
   return /^https?:\/\/[^\s]+\.(jpg|jpeg|png|gif|webp)(\?.*)?$/i.test(url);
 }
 
-// — помощник: делает slug уникальным, добавляя -2, -3, ...
+// — Assistant: makes SLUG unique, adding -2, -3, ..
 async function makeUniqueSlug(Model, base, currentId = null) {
   let slug = base;
   let n = 2;
 
-  // ищем документ с таким же slug, но другим _id
+  // We are looking for a document with the same SLUG, but to others _ID
   // exists() отдаёт быстрее, чем countDocuments()
   // eslint-disable-next-line no-constant-condition
   while (await Model.exists({ slug, _id: { $ne: currentId } })) {
     slug = `${base}-${n++}`;
-    if (n > 50) break; // защитимся от бесконечного цикла в очень редком случае
+    if (n > 50) break; // defend ourselves from an endless cycle in a very rare case
   }
   return slug;
 }
@@ -44,7 +44,7 @@ const CamperSchema = new Schema(
       },
     ],
 
-    // ссылка на категорию
+    // link to the category
     category: {
       type: Schema.Types.ObjectId,
       ref: 'Category',
@@ -72,7 +72,7 @@ const CamperSchema = new Schema(
       {
         featureName: { type: String, trim: true },
         featurePrice: { type: Number, min: 0, default: 0 },
-        _id: false, // не плодим _id на каждый элемент
+        _id: false, // do not flatter _ID for each element
       },
     ],
 
